@@ -12,10 +12,13 @@ It has been deployed on cloud right now. The website url is `http://usportifier.
 
 You can registered as Student, Staff and Local Supporter. 
 One existing account has been registered for test: 
+
 Username: tengz,
 Password: 123
 
+
 There is one administrator account for test:
+
 Username: adminCMUadmin
 Password:123
 
