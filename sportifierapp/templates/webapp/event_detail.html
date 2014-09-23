@@ -1,0 +1,292 @@
+{% extends	"webapp/register_login.html" %}
+
+{% block header %}
+<meta charset="utf-8">
+<title>Sportifier</title>
+<script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false&libraries=places"></script>
+<script src="/static/themes/js/event_detail.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="">
+<!--[if ie]><meta content='IE=8' http-equiv='X-UA-Compatible'/><![endif]-->
+
+<!-- bootstrap -->
+<link href="/static/bootstrap/css/bootstrap.min.css" rel="stylesheet">      
+<link href="/static/bootstrap/css/bootstrap-responsive.min.css" rel="stylesheet">		
+<link href="/static/themes/css/bootstrappage.css" rel="stylesheet"/>
+
+<!-- global styles -->
+<link href="/static/themes/css/main.css" rel="stylesheet"/>
+<link href="/static/themes/css/jquery.fancybox.css" rel="stylesheet"/>
+<link href="/static/themes/css/myvcss.css" rel="stylesheet"/>
+<link href="/static/themes/css/mytcss.css" rel="stylesheet"/>
+		
+<!-- scripts -->
+<script src="/static/themes/js/jquery-1.7.2.min.js"></script>
+<link rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css">
+
+
+<script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
+<script src="/static/bootstrap/js/bootstrap.min.js"></script>				
+<script src="/static/themes/js/superfish.js"></script>	
+<script src="/static/themes/js/jquery.scrolltotop.js"></script>
+<script src="/static/themes/js/jquery.fancybox.js"></script>
+<script src="/static/themes/js/jquery.fancybox.js"></script>
+<script src="/static/themes/js/addfriend.js"></script>
+<script src="/static/themes/js/common.js"></script>
+<script>
+	$(function () {
+		$('#myTab a:first').tab('show');
+		$('#myTab a').click(function (e) {
+			e.preventDefault();
+			$(this).tab('show');
+		})
+	})
+	$(document).ready(function() {
+		$('.thumbnail').fancybox({
+			openEffect  : 'none',
+			closeEffect : 'none'
+		});
+		
+		$('#myCarousel-2').carousel({
+			interval: 2500
+		});								
+	});
+</script>
+
+<script type="text/javascript">
+	$(document).ready(function() {
+		var friendlist = []
+		for (var i = 0; i < $("#friendlist").children('option').length;i++) {
+			friendlist.push($("#friendlist").children('option').eq(i).text());
+		}
+		for (var j = 0; j < $(".form-control").length;j++) {
+			$("#"+$(".form-control" ).eq(j).attr('id')).autocomplete({
+			source: friendlist
+			});
+		}
+	});
+</script>		
+<!--[if lt IE 9]>			
+	<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+	<script src="js/respond.min.js"></script>
+<![endif]-->
+{% endblock %}
+
+{% block menu %}
+<section class="navbar main-menu">
+	<div class="navbar-inner main-menu">				
+		<a href="#" class="logo pull-left"><img src="/static/themes/images/logo.png" style="max-width: 45%;" class="site_logo" alt=""></a>
+		<nav id="menu" class="pull-right">
+			<ul>
+				<li class="active"><a href="/">Events</a>
+				</li>															
+				<li><a href="/userprofile/{{ username}}">User profile</a></li>			
+				<li><a href="/settings">privacy settings</a>
+				</li>							
+				<li><a href="/logout">Sign out</a></li>
+			</ul>
+		</nav>
+	</div>
+</section>
+<section class="header_text sub">
+<img class="pageBanner" src="/static/themes/images/pageBanner.png" alt="New products" >
+</section>
+{% endblock %}
+
+{% block main_content %}
+<section class="main-content">				
+	<div class="row">						
+		<div class="span12">
+			<div class="row">
+				<div class="span3" style="margin-left:80px">
+					<img src="/static/themes/images/media/university-logos/{{ event.host }}.jpg" width="180px" height="200px" alt="">
+					<div style="margin-top:2px"><strong><span style="margin-left:80px; margin-top:120px">VS</span></strong></div>
+					<img src="/static/themes/images/media/university-logos/{{ event.away }}.jpg" width="180px" height="200px" alt="">
+				</div>
+				<div class="span4">
+					<address>
+						<strong>Event Name:</strong> <span>{{ event.host }} vs {{ event.away }}</span><br>
+						<strong>Event Type:</strong> <span>{{ event.type }}</span><br>
+						<strong>Event Location:</strong> <span>{{ event.host }}</span><br>
+						{% if event.areticketsavailableatvenue == 'yes' %}
+						<strong>Ticket sales mode:</strong> <span>Online and at the venue</span><br>	
+						{% else %}
+						<strong>Ticket sales mode:</strong> <span>Online only</span><br>
+						{% endif %}
+						<strong>Tickets left:</strong> <span>{{ event.ticketsleft }}</span><br>
+						<strong>Discount % (1 person):</strong> <span>No discount</span><br>
+						<strong>Discount % (2-3 persons):</strong> <span>5 %</span><br>
+						<strong>Discount % (4-6 persons):</strong> <span>10 %</span><br>
+						<strong>Discount % (> than 6 persons):</strong> <span>15 %</span><br>																
+					</address>									
+					<h4><strong>Your price: $ {{ userprice }}</strong></h4>
+					{% if errors %}
+					<div>
+					{% for error in errors %}
+					<div class="alert alert-error">
+						<p class="close" data-dismiss="alert" href="#">×</p>{{ error }}
+					</div>
+					{% endfor %}
+					</div>
+					{% endif %}
+					<form class="form-inline" action="{% url 'payment' %}" method = "post">
+						<div class="container">
+							<div class="row">
+								<input type="hidden" name="count" value="1" />
+								<div class="control-group" id="fields">
+<!-- 									            <label class="control-label" for="field1">Add friends</label> -->
+									<div class="controls" id="profs"> 
+										<form class="input-append">
+											<div id="field">
+												<input class="input form-control" id="field1" name="field" type="text" placeholder="Add friend" data-items="2"/>
+												<button id="b1" class="btn add-more" type="button" >+</button>
+											</div>
+										</form>
+									</div>
+								</div>
+							</div>
+						<input type="hidden" name="eventid" value="{{ eventid }}"/>										
+						<input class="btn btn-inverse pull-left" style="margin-left:100px;" type="submit" value="Go to payment page">
+						{% csrf_token %}
+						</div>
+					</form>								
+				</div>
+				<select id = 'friendlist' class="selectpicker input-xlarge" style="position:absolute;left:100px;top:150px;visibility:hidden">>
+					{% for af in friendList %}
+					<option value="{{af.username}}">{{af.username}}</option>
+					{% endfor %}
+				</select>							
+				<input type="hidden" id="lat" value="{{ event.locationlattitude }}"/>
+				<input type="hidden" id="lon" value="{{ event.locationlongitude }}"/>
+				
+				<!-- Event Location -->
+				<div class="span4">
+					<div class="control-group">
+						<label class="control-label" style="color:black"><strong>Event Location: </strong></label>
+						<div class="controls">
+							<input id="pac-input1" type="hidden" placeholder="Search Box">
+							<div id="map-event"></div>
+						</div>
+					</div>
+				</div>
+				
+								
+			</div>
+			<div class="row">
+				<div class="span9">
+					<ul class="nav nav-tabs" id="myTab">
+						<li class="active"><a href="#home">Description</a></li>
+						<li class=""><a href="#profile">Pricing Information</a></li>
+					</ul>							 
+					<div class="tab-content">
+						<div class="tab-pane active" id="home">{{ event.description }}</div>
+						<div class="tab-pane" id="profile">
+							<table class="table table-striped shop_attributes">	
+								<tbody>
+									<tr class="">
+										<th>Student (home university)</th>
+										<td>$ {{ event.homestudentticketprice }}</td>
+									</tr>		
+									<tr class="alt">
+										<th>Staff (home university)</th>
+										<td>$ {{ event.homestaffticketprice }}</td>
+									</tr>
+									<tr class="">
+										<th>Local supporter (home university)</th>
+										<td>$ {{ event.homesupporterticketprice }}</td>
+									</tr>
+									<tr class="alt">
+										<th>Student (away university)</th>
+										<td>$ {{ event.awaystudentticketprice }}</td>
+									</tr>
+									<tr class="">
+										<th>Staff (away university)</th>
+										<td>$ {{ event.awaystaffticketprice }}</td>
+									</tr>
+									<tr class="alt">
+										<th>Local supporter (away university)</th>
+										<td>$ {{ event.awaysupporterticketprice }}</td>
+									</tr>
+									<tr class="">
+										<th>Total tickets for the match</th>
+										<td>{{ event.maxnumberoftickets }}</td>
+									</tr>
+									<tr class="alt">
+										<th>Tickets sold at the venue?</th>
+										<td>
+										{% if event.areticketsavailableatvenue %}
+										Yes	
+										{% else %}
+										No
+										{% endif %}														
+										</td>
+									</tr>												
+								</tbody>
+							</table>
+						</div>
+					</div>							
+				</div>						
+				<div class="span9">	
+					<br>
+					<h4 class="title">
+						<span class="pull-left"><span class="text"><strong>Related</strong> Events</span></span>
+						<span class="pull-right">
+							<a class="left button" href="#myCarousel-1" data-slide="prev"></a><a class="right button" href="#myCarousel-1" data-slide="next"></a>
+						</span>
+					</h4>
+					<div id="myCarousel-1" class="carousel slide">
+						<div class="carousel-inner">
+						
+							{% for related_event in related_events %}
+							{% if forloop.counter0|divisibleby:"3" and forloop.counter0 == 0 %}
+							<div class="active item">
+								<ul class="thumbnails listing-products">
+							{% elif forloop.counter0|divisibleby:"3" %}
+							<div class="item">
+								<ul class="thumbnails listing-products">
+							{% endif %}
+									<li class="span3">
+										<div class="product-box">												
+											<a href="/event/{{ related_event.id }}"><img src="/static/themes/images/media/university-logos/{{ related_event.host }}.jpg" width="80px" height="100px" alt=""></a>
+											<p>VS</p>
+											<a href="/event/{{ related_event.id }}"><img src="/static/themes/images/media/university-logos/{{ related_event.away }}.jpg" width="80px" height="100px" alt=""></a>
+											<br/>
+											<a href="/event/{{ related_event.id }}" class="title">{{related_event.host}}<br> v/s <br>{{related_event.away}}</a><br/>
+											<a href="/event/{{ related_event.id }}" class="category">{{related_event.type}}</a>
+										</div>
+									</li>	
+							{% if forloop.counter|divisibleby:"3" or forloop.last %}
+								</ul>
+							</div>
+							{% endif %}
+							{% endfor %}
+							
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="span3 col">
+		</div>
+	</div>
+</section>	
+{% endblock %}
+
+{% block footer %}
+<section id="footer-bar">
+	<div class="row">
+		<div class="span5 offset4">
+			<p class="logo"><img src="/static/themes/images/logo.png" class="site_logo" alt=""></p>
+			<p>Welcome to Sportifiers! Here you could either post a university sports event or find your interested one.</p>
+				
+			<p>Hanging out with your best friends is always the lowest price! </p>
+			<br/>
+		</div>
+	</div>
+	
+</section>
+<section id="copyright">
+	<p>Copyright 2013 Sportifiers  All right reserved.</p>
+</section>
+{% endblock %}

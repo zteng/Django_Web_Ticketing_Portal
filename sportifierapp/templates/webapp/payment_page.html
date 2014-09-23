@@ -1,0 +1,187 @@
+{% extends	"webapp/register_login.html" %}
+
+{% block header %}
+<meta charset="utf-8">
+<title>Sportifiers</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="">
+<!--[if ie]><meta content='IE=8' http-equiv='X-UA-Compatible'/><![endif]-->
+<!-- bootstrap -->
+<link href="/static/bootstrap/css/bootstrap.min.css" rel="stylesheet">      
+<link href="/static/bootstrap/css/bootstrap-responsive.min.css" rel="stylesheet">		
+<link href="/static/themes/css/bootstrappage.css" rel="stylesheet"/>
+
+<!-- global styles -->
+<link href="/static/themes/css/flexslider.css" rel="stylesheet"/>
+<link href="/static/themes/css/main.css" rel="stylesheet"/>
+
+<!-- scripts -->
+<script src="/static/themes/js/jquery-1.7.2.min.js"></script>
+<script src="/static/bootstrap/js/bootstrap.min.js"></script>				
+<script src="/static/themes/js/superfish.js"></script>	
+<script src="/static/themes/js/jquery.scrolltotop.js"></script>
+<script src="/static/themes/js/ajax_search_date.js"></script>
+<script src="/static/themes/js/ajax_search_type.js"></script>
+<script src="/static/themes/js/ajax_search_home_uni.js"></script>
+<!--<link rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css" />-->
+<script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+<script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
+<script src="/static/themes/js/common.js"></script>	
+<script>
+	$(function() {
+		$( ".block" ).accordion();
+	});
+</script>
+{% endblock %}	
+
+{% block menu %}	
+<section class="navbar main-menu">
+	<div class="navbar-inner main-menu">				
+		<a href="#" class="logo pull-left"><img src="/static/themes/images/logo.png" style="max-width: 45%;" class="site_logo" alt=""></a>
+		<nav id="menu" class="pull-right">
+			<ul>
+				<li><a href="/">Events</a></li>															
+				<li><a href="/userprofile/{{ username}}">User profile</a></li>			
+				<li><a href="/settings">privacy settings</a></li>
+				<li><a href="/logout">Sign out</a></li>
+			</ul>
+		</nav>
+	</div>
+</section>	
+<section class="header_text sub">
+<img class="pageBanner" src="/static/themes/images/pageBanner.png" alt="New products" >
+	<!-- <h4><span>New products</span></h4> -->
+</section>
+{% endblock %}
+
+{% block main_content %}
+<section class="main-content">	
+	<div class="row">	
+		<div class="container span6 offset3">
+			<div class="row">
+				<div class="well col-xs-10 col-sm-10 col-md-6 col-xs-offset-1 col-sm-offset-1 col-md-offset-3">
+					<div class="row" style="margin-left:30px">
+						<div class="col-xs-6 col-sm-6 col-md-6" style="float:left">
+							<address>
+								<strong>Payee's username : {{ username }}</strong>
+								<br>
+								<abbr title="Phone"><strong>Phone :</strong></abbr> {{ userprofile.phone }}<br>
+								<abbr title="Email"><strong>Email :</strong></abbr> {{ userprofile.email }}
+							</address>
+						</div>
+						<div class="col-xs-6 col-sm-6 col-md-6 text-left" style="float:right">
+							<p>
+								<em><strong>Payment Date :</strong> {{ curr_transaction.date }}</em>
+							</p>
+							<p>
+								<em><strong>Transaction #:</strong> {{ curr_transaction.id }}</em>
+							</p>
+							<p>
+								<em><strong>Match :</strong> {{ event.host }} VS {{ event.away }}</em>
+							</p>
+							<p>
+								<em><strong>Championship :</strong> {{ event.championship }}</em>
+							</p>                    
+												
+						</div>
+					</div>
+					<div class="row" style="margin-left:30px">
+						<div class="text-center">
+							<h1>Transaction Details</h1>
+						</div>
+						</span>
+						<table class="table table-hover">
+							<thead>
+								<tr>
+									<th>User Name</th>
+									<th>User Type</th>
+									<th class="text-center">Original Individual Price</th>
+									<th class="text-center">Group Discounted Price</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td class="col-md-9"><em>{{ userprofile.user }}</em></h4></td>
+									<td class="col-md-1 text-center" > {{ userprofile.usertype }} </td>
+									<td class="col-md-1" style="text-align:center">${{ userprofile.userprice }}</td>
+									<td class="col-md-1" style="text-align:center">${{ userprofile.userdiscountprice }}</td>
+								</tr>                    
+								{% for member in transactionMembers %}
+								<tr>
+									<td class="col-md-9"><em>{{ member.user }}</em></h4></td>
+									<td class="col-md-1 text-center" > {{ member.usertype }} </td>
+									<td class="col-md-1" style="text-align:center">${{ member.userprice }}</td>
+									<td class="col-md-1" style="text-align:center">${{ member.userdiscountprice }}</td>
+								</tr>
+								{% endfor %}
+								<tr>
+									<td>   </td>
+									<td>   </td>
+									<td style="text-align:right">
+									<p>
+										<strong>Subtotal: </strong>
+									</p>
+									<p>
+										<strong>Tax: </strong>
+									</p></td>
+									<td style="text-align:center">
+									<p>
+										<strong>${{ totalamount }}</strong>
+									</p>
+									<p>
+										<strong>${{ taxamount }}</strong>
+									</p></td>
+								</tr>
+								<tr>
+									<td>   </td>
+									<td>   </td>
+									<td style="text-align:right"><h4><strong>Total: </strong></h4></td>
+									<td class="text-danger" style="text-align:center"><h4><strong>${{ totaltransactionamount }}</strong></h4></td>
+								</tr>
+							</tbody>
+						</table>
+				   
+						<div class="row" style="margin-left:30px">
+						
+						<div style="float:left">
+							<form  class="form-inline" action="{% url 'cancel_transaction' %}" method = "post">										
+								 <button type="submit" class="btn btn-success btn-lg btn-block" >
+									Go Back  
+								</button>
+								<input type="hidden" name="eventid" value="{{ eventid }}"/>	
+								<input type="hidden" name="transactionid" value="{{ curr_transaction.id }}"/>	
+								{% csrf_token %}
+							</form>
+						</div>
+						
+						<div style="float:right">
+						<a type="button" class="btn btn-success btn-lg btn-block" href="/paymentsuccess" >
+							Pay Now
+						</a>
+						</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+{% endblock %}
+
+{% block footer %}
+<section id="footer-bar">
+	<div class="row">
+		<div class="span5 offset4">
+			<p class="logo"><img src="/static/themes/images/logo.png" class="site_logo" alt=""></p>
+			<p>Welcome to Sportifiers! Here you could either post a university sports event or find your interested one.</p>
+				
+			<p>Hanging out with your best friends is always the lowest price! </p>
+			<br/>
+		</div>
+	</div>
+	
+</section>
+<section id="copyright">
+	<p>Copyright 2013 Sportifiers  All right reserved.</p>
+</section>
+{% endblock %}

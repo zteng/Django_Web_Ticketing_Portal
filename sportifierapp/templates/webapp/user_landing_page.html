@@ -1,0 +1,171 @@
+{% extends	"webapp/register_login.html" %}
+
+{% block header %}
+<meta charset="utf-8">
+<title>Sportifiers</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="">
+<!--[if ie]><meta content='IE=8' http-equiv='X-UA-Compatible'/><![endif]-->
+<!-- bootstrap -->
+<link href="/static/bootstrap/css/bootstrap.min.css" rel="stylesheet">      
+<link href="/static/bootstrap/css/bootstrap-responsive.min.css" rel="stylesheet">		
+<link href="/static/themes/css/bootstrappage.css" rel="stylesheet"/>
+
+<!-- global styles -->
+<link href="/static/themes/css/flexslider.css" rel="stylesheet"/>
+<link href="/static/themes/css/main.css" rel="stylesheet"/>
+
+<!-- scripts -->
+<script src="/static/themes/js/jquery-1.7.2.min.js"></script>
+<script src="/static/bootstrap/js/bootstrap.min.js"></script>				
+<script src="/static/themes/js/superfish.js"></script>	
+<script src="/static/themes/js/jquery.scrolltotop.js"></script>
+<script src="/static/themes/js/ajax_search_date.js"></script>
+<script src="/static/themes/js/ajax_search_type.js"></script>
+<script src="/static/themes/js/ajax_search_home_uni.js"></script>
+<script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+<script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
+<script src="/static/themes/js/common.js"></script>	
+<script>
+	$(function() {
+		$( ".block" ).accordion();
+	});
+</script>
+<!--[if lt IE 9]>			
+	<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+	<script src="js/respond.min.js"></script>
+<![endif]-->
+{% endblock %}
+
+{% block menu %}
+<section class="navbar main-menu">
+	<div class="navbar-inner main-menu">				
+		<a href="#" class="logo pull-left"><img src="/static/themes/images/logo.png" style="max-width: 45%;" class="site_logo" alt=""></a>
+		<nav id="menu" class="pull-right">
+			<ul>
+				<li class="active"><a href="/">Events</a>					
+				</li>															
+				<li><a href="/userprofile/{{ username}}">User profile</a></li>			
+				<li><a href="/settings">privacy settings</a>
+				</li>							
+				<li><a href="/logout">Sign out</a></li>
+			</ul>
+		</nav>
+	</div>
+</section>	
+<section class="header_text sub">
+<img class="pageBanner" src="/static/themes/images/pageBanner.png" alt="New products" >
+</section>
+{% endblock %}
+
+{% block main_content %}
+<section class="main-content">
+	<div class="row">
+		<div class="span8" id="event_list">	
+			<h3> Events <small class="pull-right" style="padding-top:20px"> {{ numberOfEvents }} events are available </small></h3>	
+			<hr class="soft"/>
+			<table class="table table-striped">
+				<thead>
+					<tr>
+						<th>Date</th>
+						<th>Match between</th>
+						<th>Event Type</th>
+						<th>Event Info</th>
+					</tr>
+				</thead>
+				<tbody>
+					{% for event in events %}							
+					<tr>
+						<td style="width:20%"> 
+						<p>{{ event.event_parse_date }}</p>
+						<p>{{ event.event_parse_time }}</p>
+						</td>
+						<td style="width:25%">{{ event.host }} <p style="margin-top:10px; color:red; font-size:20px">vs</p> {{ event.away }}</td>
+						<td style="width:20%">{{ event.type }}</td>
+						<td style="width:35%">
+						<p>{{ event.championship }}</p>
+						<a type="button" class="btn btn-info" href="/event/{{ event.id }}">Detailed Info</a>
+						</td>
+					</tr>
+					{% endfor %}
+				</tbody>
+			</table>								
+			<hr>
+		</div>
+	
+		<div class="span4 col">
+			<div class="block">	
+				<h4 style="cursor:pointer">Search within time range</h4>
+				<ul class="nav nav-list" style="padding-left:50px;">
+					<li class="nav-header">Limit your search time by :</li>
+					<li>
+					<div class="form-search">
+					<p>From : <input type="date" name="start_date"/></p>
+					<p style="padding-left:15px;">To : <input type="date" name="end_date"/></p>
+					<p style="padding-left:187px;">
+					<button onclick="sendSearchByDateRequest()" class="btn btn-default">Search</button></p>
+					</div>
+					</li>
+				</ul>
+				<h4 style="cursor:pointer">Search by event type</h4>
+				<ul class="nav nav-list" style="padding-left:50px;">
+					<li class="nav-header">Choose your favourite event type :</li>
+					<li>
+					<div class="form-search">
+						<div class="input-append">
+							<select class="selectpicker" name="eventType">
+								<option value="" selected="selected">Choose an event type</option>
+								{% for evt_type in event_type %}
+								<option value="{{evt_type.type}}">{{evt_type.type}}</option>
+								{% endfor %}
+							</select>
+							<button onclick="sendSearchByTypeRequest()" class="btn"><i class="icon-search"></i></button>
+						</div>
+					</div>
+					</li>
+					<br>
+				</ul>	
+				<h4 style="cursor:pointer">Search by hosting university</h4>
+				<ul class="nav nav-list" style="padding-left:50px;">
+					<li class="nav-header">Choose your preferred hosting university :</li>
+					<li>
+					<div class="form-search">
+						<div class="input-append">
+							<select class="selectpicker" name="hostUni">
+								<option value="" selected="selected">Choose a hosting university</option>
+								{% for host in host_university %}
+								<option value="{{host.name}}">{{host.name}}</option>
+								{% endfor %}
+							</select>
+							<button onclick="sendSearchByHostUniRequest()" class="btn"><i class="icon-search"></i></button>
+						</div>
+					</div>
+					</li>
+					<br>
+				</ul>	
+			</div>
+		</div>
+	</div>
+</section>
+{% endblock %}
+
+{% block footer %}
+<section id="footer-bar">
+	<div class="row">
+		<div class="span5 offset4">
+			<p class="logo"><img src="/static/themes/images/logo.png" class="site_logo" alt=""></p>
+			<p>Welcome to Sportifiers! Here you could either post a university sports event or find your interested one.</p>
+				
+			<p>Hanging out with your best friends is always the lowest price! </p>
+			<br/>
+		</div>
+	</div>
+</section>
+<section id="copyright">
+	<p>Copyright 2013 Sportifiers  All right reserved.</p>
+</section>
+{% endblock %}
+
+
+
+

@@ -1,0 +1,128 @@
+* {
+  .border-radius(0) !important;
+}
+
+#field {
+    margin-bottom:20px;
+    margin-left:30px;
+}
+
+body{padding-top:30px;}
+
+.glyphicon {  margin-bottom: 10px;margin-right: 10px;}
+
+small {
+display: block;
+line-height: 1.428571429;
+color: #999;
+}
+
+/* confirm friend box
+----------------------------------------------------------------------------- */
+.confirm-friend-box{
+	text-align:center;
+	margin-top:5px;
+	padding-bottom:15px;
+	position: relative;
+	background-color:#f8f8f8;
+	border-radius: 4px;
+	-moz-border-radius: 4px;
+	-webkit-border-radius: 4px;
+	border-bottom:1px solid #eee;
+}
+.confirm-friend-box span.sale_tag {
+	background:  no-repeat scroll 0 0 transparent;
+	height: 14px;
+	position: absolute;
+	width: 55px;
+	z-index: 100;
+	top:0;
+	left:0;
+}
+.confirm-friend-box:hover{
+	background-color:#eb4800;
+	-webkit-transition: all 0.2s linear;
+    -moz-transition: all 0.2s linear;
+    -o-transition: all 0.2s linear;
+    -ms-transition: all 0.2s linear;
+    transition: all 0.2s linear;
+	box-shadow: 0px 0px 5px #ccc;
+}
+.confirm-friend-box:hover a{
+	color:#fff !important;
+}
+.confirm-friend-box img{
+	overflow:hidden;
+}
+.confirm-friend-box a.title{
+	text-transform:uppercase;
+	color:#111111;
+	display:inline-block;
+	font-weight:bold;
+	font-size:11px;
+	margin:0px 0 0px 0;
+}
+.confirm-friend-box a.category{
+	color:#eb4800;
+}
+.confirm-friend-box p.price{
+	font-size:20px;
+	font-weight:300;
+	padding:10px 0;
+}
+/* end confirm-friend box */
+
+/* already friend box
+----------------------------------------------------------------------------- */
+.already-friend-box{
+	text-align:center;
+	margin-top:5px;
+	padding-bottom:15px;
+	position: relative;
+	background-color:#f8f8f8;
+	border-radius: 4px;
+	-moz-border-radius: 4px;
+	-webkit-border-radius: 4px;
+	border-bottom:1px solid #eee;
+}
+.already-friend-box span.sale_tag {
+	background:  no-repeat scroll 0 0 transparent;
+	height: 14px;
+	position: absolute;
+	width: 55px;
+	z-index: 100;
+	top:0;
+	left:0;
+}
+.already-friend-box:hover{
+	background-color:#eb4800;
+	-webkit-transition: all 0.2s linear;
+    -moz-transition: all 0.2s linear;
+    -o-transition: all 0.2s linear;
+    -ms-transition: all 0.2s linear;
+    transition: all 0.2s linear;
+	box-shadow: 0px 0px 5px #ccc;
+}
+.already-friend-box:hover a{
+	color:#fff !important;
+}
+.already-friend-box img{
+	overflow:hidden;
+}
+.already-friend-box a.title{
+	text-transform:uppercase;
+	color:#111111;
+	display:inline-block;
+	font-weight:bold;
+	font-size:11px;
+	margin:0px 0 0px 0;
+}
+.already-friend-box a.category{
+	color:#eb4800;
+}
+.already-friend-box p.price{
+	font-size:20px;
+	font-weight:300;
+	padding:10px 0;
+}
+/* end already-friend box */

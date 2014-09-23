@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+	{% block header %}
+		<meta charset="utf-8">
+		<title>Sportifiers</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta name="description" content="">
+		<!--[if ie]><meta content='IE=8' http-equiv='X-UA-Compatible'/><![endif]-->
+		<!-- bootstrap -->
+		<link href="/static/bootstrap/css/bootstrap.min.css" rel="stylesheet">      
+		<link href="/static/bootstrap/css/bootstrap-responsive.min.css" rel="stylesheet">		
+		<link href="/static/themes/css/bootstrappage.css" rel="stylesheet"/>
+		
+		<!-- global styles -->
+		<link href="/static/themes/css/flexslider.css" rel="stylesheet"/>
+		<link href="/static/themes/css/main.css" rel="stylesheet"/>
+
+		<!-- scripts -->
+		<script src="/static/themes/js/jquery-1.7.2.min.js"></script>
+		<script src="/static/bootstrap/js/bootstrap.min.js"></script>				
+		<script src="/static/themes/js/superfish.js"></script>	
+		<script src="/static/themes/js/jquery.scrolltotop.js"></script>
+		<!--[if lt IE 9]>			
+			<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+			<script src="js/respond.min.js"></script>
+		<![endif]-->
+	{% endblock %}
+	</head>
+    <body>		
+		<div id="wrapper" class="container">
+			{% block menu %}
+			<section class="navbar main-menu">
+				<div class="navbar-inner main-menu">				
+					<a href="#" class="logo pull-left"><img src="/static/themes/images/logo.png" style="max-width: 45%;" class="site_logo" alt=""></a>
+					<h4 class="pull-right"><span><i>University sports event communication platform</i></span></h4>
+				</div>
+			</section>			
+			<section class="header_text sub">
+			<img class="pageBanner" src="/static/themes/images/pageBanner.png" alt="New products" >
+			</section>		
+			{% endblock %}
+			
+			{% block main_content %}
+			<section class="main-content">				
+				<div class="row">
+					<div class="span5 offset1">					
+						<h4 class="title"><span class="text"><strong>Login to your account</strong></span></h4>
+					<div>
+					{% if form.errors %}
+					<p class="close" data-dismiss="alert" href="#">×</p>
+					<h4><strong>Invalid Registration Submitted: </strong></h4>
+					<div class="alert alert-error">
+					<p class="close" data-dismiss="alert" href="#">×</p>
+					username and password didn't match! Please try again. 
+					</div>
+					{% endif %} 
+					</div>
+						<form action="{% url 'login' %}" method="post">
+							<input type="hidden" name="next" value="/">
+							<fieldset>
+								
+								<div class="control-group">
+									<label class="control-label">Username :</label>
+									<div class="controls">
+										<input type="text" name="username" placeholder="Enter your username" id="username" class="input-xlarge">
+									</div>
+								</div>
+								<div class="control-group">
+									<label class="control-label">Password :</label>
+									<div class="controls">
+										<input type="password" name="password" placeholder="Enter your password" id="password" class="input-xlarge">
+									</div>
+								</div>
+								<div class="control-group">
+									<input tabindex="3" class="btn btn-inverse large" type="submit" value="Signin your account">
+									<hr>
+									<p class="reset">Forget your password? <a tabindex="4" href="#" title="forget your password">reset here</a>.</p>
+								</div>
+							</fieldset>
+							{% csrf_token %}
+						</form>				
+					</div>
+					<div class="span5">					
+						<h4 class="title"><span class="text"><strong>Register an account now</strong></span></h4>
+					<div>
+					{% if errors %}
+					<p class="close" data-dismiss="alert" href="#">×</p>
+					<h4><strong>Invalid Registration Submitted: </strong></h4>
+					{% for error in errors %}
+					<div class="alert alert-error">
+						<p class="close" data-dismiss="alert" href="#">×</p>{{ error }}
+					</div>
+					{% endfor %}
+					{% endif %} 
+					</div>
+						<form action="/register" method="post" class="form-stacked">
+							<fieldset>
+								
+								<div class="control-group">
+									<p>If you need to register as a university administrator, please send an email to 
+									<a tabindex="4" href="mailto:sportfier@gmail.com?Subject=Register%20as%20an%20admin" title="forget your password">sportfier@gmail.com</a> 
+									for privileges.</p>
+								</div>
+								
+								<div class="control-group">
+									<label class="control-label">User type :</label>
+									<div class="controls">
+										<input type="radio" name="typeList" value="student" style="margin-left:8px" checked="checked"> Student
+										<input type="radio" name="typeList" value="staff" style="margin-left:8px"> Staff   
+										<input type="radio" name="typeList" value="local" style="margin-left:8px"> Local Supporter 
+										
+									</div>
+								</div>
+								
+								<div class="control-group">
+									<label class="control-label">Username :</label>
+									<div class="controls">
+										<input type="text" name="username" placeholder="Enter your username" class="input-xlarge">
+									</div>
+								</div>
+								<div class="control-group">
+									<label class="control-label">University Affiliation :</label>
+									<div class="controls">
+										<select name="affiliation" class="selectpicker input-xlarge">
+											<option value="" selected="selected">Choose your affiliation</option>
+											{% for aff in uni_affiliation %}
+											<option value="{{aff.name}}">{{aff.name}}</option>
+											{% endfor %}
+										</select>
+									</div>
+								</div>
+								<div class="control-group">
+									<label class="control-label">Email address :</label>
+									<div class="controls">
+										<input type="email" name="email" placeholder="Enter your email" class="input-xlarge">
+									</div>
+								</div>
+								<div class="control-group">
+									<label class="control-label">Password :</label>
+									<div class="controls">
+										<input type="password" name="password1" placeholder="Enter your password" class="input-xlarge">
+									</div>
+								</div>
+								
+								<div class="control-group">
+									<label class="control-label">Confirm Password :</label>
+									<div class="controls">
+										<input type="password" name="password2" placeholder="Enter your password" class="input-xlarge">
+									</div>
+								</div>	
+								
+								<hr>
+								<div class="actions"><input tabindex="9" class="btn btn-inverse large" type="submit" value="Create your account"></div>
+							</fieldset>
+							{% csrf_token %}
+						</form>					
+					</div>				
+				</div>
+			</section>		
+			{% endblock %}
+			
+			{% block footer %}
+			<section id="footer-bar">
+				<div class="row">
+					<div class="span5 offset4">
+						<p class="logo"><img src="/static/themes/images/logo.png" class="site_logo" alt=""></p>
+						<p>Welcome to Sportifiers! Here you could either post a university sports event or find your interested one.</p>
+							
+						<p>Hanging out with your best friends at always the lowest price! </p>
+						<br/>
+					</div>
+				</div>
+				
+			</section>
+			<section id="copyright">
+				<p>Copyright 2013 Sportifiers  All right reserved.</p>
+			</section>
+			{% endblock %}
+		</div>	
+    </body>
+</html>

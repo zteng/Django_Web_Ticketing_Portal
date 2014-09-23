@@ -1,0 +1,245 @@
+{% extends	"webapp/register_login.html" %}
+
+{% block header %}
+<meta charset="utf-8">
+<title>Bootstrap E-commerce Templates</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="">
+<!--[if ie]><meta content='IE=8' http-equiv='X-UA-Compatible'/><![endif]-->
+<!-- bootstrap -->
+<link href="/static/bootstrap/css/bootstrap.min.css" rel="stylesheet">      
+<link href="/static/bootstrap/css/bootstrap-responsive.min.css" rel="stylesheet">		
+<link href="/static/themes/css/bootstrappage.css" rel="stylesheet"/>
+
+<!-- global styles -->
+<link href="/static/themes/css/flexslider.css" rel="stylesheet"/>
+<link href="/static/themes/css/main.css" rel="stylesheet"/>
+<link href="/static/themes/css/myvcss.css" rel="stylesheet"/>
+
+<!-- scripts -->
+<script src="/static/themes/js/jquery-1.7.2.min.js"></script>
+<script src="/static/bootstrap/js/bootstrap.min.js"></script>				
+<script src="/static/themes/js/superfish.js"></script>	
+<script src="/static/themes/js/jquery.scrolltotop.js"></script>
+<script src="/static/themes/js/common.js"></script>
+<script type="text/javascript">
+	$(document).ready(function() {
+		if (document.getElementById("addfriendCarousel").children[0].childElementCount > 0) {
+			document.getElementById("addfriendCarousel").children[0].children[0].className = "active item";	
+		}
+	});
+</script>		
+<!--[if lt IE 9]>			
+	<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+	<script src="js/respond.min.js"></script>
+<![endif]-->
+{% endblock %}
+
+{% block menu %}
+<section class="navbar main-menu">
+	<div class="navbar-inner main-menu">				
+		<a href="index.html" class="logo pull-left"><img src="/static/themes/images/logo.png" style="max-width: 45%;" class="site_logo" alt=""></a>
+		<nav id="menu" class="pull-right">
+			<ul>
+				<li><a href="/">Events</a>
+				</li>															
+				<li class="active"><a href="/userprofile/{{ username}}">User profile</a></li>			
+				<li><a href="#">privacy settings</a>
+				</li>							
+				<li><a href="/logout">Sign out</a></li>
+			</ul>
+		</nav>
+	</div>
+</section>
+{% endblock %}
+
+{% block main_content %}
+<section class="main-content" style="margin-top:15px">
+<div class="row">	
+	<div class="row">						
+		<div class="span9" style="margin-right:30px">								
+			<div class="span3">
+				<div class="span2">
+				{% if profile.picture %}
+					<img src="{% url 'profile_photo' otherusername %}" alt="" class="img-rounded img-responsive" />
+				{% else %}
+					<img src="/static/themes/images/media/profile-photos/default.png" alt="" class="img-rounded img-responsive" />
+				{% endif %}
+				</div>
+				<div class="span3">
+				<h4>
+					{{ otherusername }}</h4>
+				<small><cite title="{{ profile.address }}">{{ profile.address }}</cite></small>
+				<p>
+					<i class="glyphicon glyphicon-envelope"></i>{{ profile.email }}
+					<br />
+					<i class="glyphicon glyphicon-gift"></i>{{ profile.aboutMe }}
+				</p>
+				</div>
+			</div>
+			<div class="span5">				
+				<div class="container col-lg-6">					          
+				{% if pendinglabel = 'friend request sent' %}
+				  <h4 class="profile-header"><strong>{{ otherusername }}</strong> 's information &nbsp;&nbsp;&nbsp;&nbsp;<button type="button" class="btn btn-info" disabled="disabled">{{ pendinglabel }}</button></h4>
+				{% elif pendinglabel = 'awaiting request approval' %}
+				  <h4 class="profile-header"><strong>{{ otherusername }}</strong> 's information &nbsp;&nbsp;&nbsp;&nbsp;<a type="button" class="btn btn-info" href="/confirmfriend/{{ otherusername }}">{{ pendinglabel }}</a></h4>
+				{% elif pendinglabel = 'unfriend' %}
+				  <h4 class="profile-header"><strong>{{ otherusername }}</strong> 's information &nbsp;&nbsp;&nbsp;&nbsp;<a type="button" class="btn btn-info" href="/unfriend/{{ otherusername }}">Unfriend</a></h4>
+				{% elif pendinglabel = 'edit' %}
+				  <h4 class="profile-header"><strong>{{ otherusername }}</strong> 's information &nbsp;&nbsp;&nbsp;&nbsp;<a type="button" class="btn btn-info" href="/editprofile">{{ pendinglabel }}</a></h4>					          														  					        
+				{% else %}
+				<h4 class="profile-header"><strong>{{ otherusername }}</strong> 's information &nbsp;&nbsp;&nbsp;&nbsp;<a type="button" class="btn btn-info" href="/addfriend/{{ otherusername }}">add as a friend</a></h4>
+				{% endif  %}					          
+				  
+				  <div class="container"><div class="info-attribute pull-left">Name:&nbsp;&nbsp; </div><div class="info-value">{{ profile.fullName }}</div></div>
+				  <div class="container"><div class="info-attribute pull-left">User type:&nbsp;&nbsp; </div><div class="info-value">{{ profile.usertype }}</div></div>
+				  <div class="container"><div class="info-attribute pull-left">Gender:&nbsp;&nbsp; </div><div class="info-value">{{ profile.sex }}</div></div>
+				  <div class="container"><div class="info-attribute pull-left">Mobile Phone:&nbsp;&nbsp; </div><div class="info-value">{{ profile.phone }}</div></div>
+				  <div class="container"><div class="info-attribute pull-left">Interests:&nbsp;&nbsp; </div><div class="info-value">{{ profile.interests }}</div></div>
+				  <div class="container"><div class="info-attribute pull-left">University:&nbsp;&nbsp; </div><div class="info-value">{{ profile.univaff }}</div></div>
+				  
+				</div>
+		  </div>                        
+		</div>
+		<div class="span3 col">					
+			<div class="block">
+				<h4 class="title">
+					<span class="pull-left"><span class="text">Pending friend requests</span></span>
+					<span class="pull-right">
+						<a class="left button" href="#pendingfriendCarousel" data-slide="prev"><img src="/static/themes/images/arrow-pleft.png"/></a>
+						<a class="right button" href="#pendingfriendCarousel" data-slide="next"><img src="/static/themes/images/arrow-p.png"/></a>
+					</span>
+				</h4>
+				<div id="pendingfriendCarousel" class="carousel slide">
+					<div class="carousel-inner">
+						{% for friend in pendingFriends %}
+						{% if forloop.first %}
+							<div class="active item">
+						{% else %}
+							<div class="item">
+						{% endif %}
+							<ul class="thumbnails listing-products">
+								<li class="span3">
+									{% if friend.picture %}
+										<img src="{% url 'profile_photo' friend %}"  width="80px"  height="100px" alt="" style="max-height:100px" class="img-rounded img-responsive" /><br/>
+									{% else %}
+										<img src="/static/themes/images/media/profile-photos/default.png"  width="80px"  height="100px" alt="" style="max-height:100px" class="img-rounded img-responsive" /><br/>
+									{% endif %}
+									<div class="confirm-friend-box">
+										<span class="sale_tag"></span>
+										<a href="/confirmfriend/{{ friend }}" class="title">{{ friend }}</a><br/>
+										<a href="/confirmfriend/{{ friend }}" class="title">{{ friend.univaff }}</a></br>
+										<a href="/confirmfriend/{{ friend }}" class="category">Confirm as a friend</a>
+									</div>
+								</li>
+							</ul>
+							</div>
+						{% endfor %}
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="row">					
+		<div class="span9">	
+			<br>
+			<h4 class="title">
+				<span class="pull-left"><span class="text">Friends of <strong>{{ otherusername }}</strong>&nbsp;({{ nFriends }})</span></span>
+				<span class="pull-right">
+					<a class="left button" href="#alreadyfriendCarousel" data-slide="prev"><img src="/static/themes/images/arrow-pleft.png"/></a>
+					<a class="right button" href="#alreadyfriendCarousel" data-slide="next"><img src="/static/themes/images/arrow-p.png"/></a>
+				</span>
+			</h4>
+			<div id="alreadyfriendCarousel" class="carousel slide">
+				<div class="carousel-inner" id="loggedinuserfriends">
+
+					{% for friend in alreadyFriends %}
+					{% if forloop.counter0|divisibleby:"3" and forloop.counter0 == 0 %}	
+					<div class=" active item">
+						<ul class="thumbnails listing-products">
+					{% elif forloop.counter0|divisibleby:"3" %}
+					<div class=" item">
+						<ul class="thumbnails listing-products">
+					{% endif %}
+							
+							<li class="span3">
+								{% if friend.picture %}
+									<img src="{% url 'profile_photo' friend %}"  width="280px"  height="200px" alt="" style="max-height:200px" class="img-rounded img-responsive" /><br/>
+								{% else %}
+									<img src="/static/themes/images/media/profile-photos/default.png"  width="280px"  height="200px" alt="" style="max-height:200px" class="img-rounded img-responsive" /><br/>
+								{% endif %}
+								<div class="already-friend-box">
+									<span class="sale_tag"></span>
+									<a href="/friendprofile/{{ friend }}" class="title">{{ friend }}</a><br/>
+									<a href="/friendprofile/{{ friend }}" class="title">{{ friend.univaff}}</a>
+									<a href="/friendprofile/{{ friend }}" class="category"><p class="price">View profile</p></a>
+								</div>
+							</li>
+					{% if forloop.counter|divisibleby:"3" or forloop.last %}
+						</ul>
+					</div>
+					{% endif %}
+					{% endfor %}
+					</div>
+				</div>
+			</div>
+		<div class="span3 col" style="margin-left:28px">					
+			<div class="block">
+				<h4 class="title">
+					<span class="pull-left"><span class="text">Common Friends</span></span>
+					<span class="pull-right">
+						<a class="left button" href="#addfriendCarousel" data-slide="prev"><img src="/static/themes/images/arrow-pleft.png"/></a>
+						<a class="right button" href="#addfriendCarousel" data-slide="next"><img src="/static/themes/images/arrow-p.png"/></a>
+					</span>
+				</h4>
+				<div id="addfriendCarousel" class="carousel slide">
+					<div class="carousel-inner">
+					{% for person in youmayknowpeople %}
+					{% if person.user in af_users and person.user in af_loggedinusers %}
+						<div class="item">
+							<ul class="thumbnails listing-products">
+								<li class="span3">
+									{% if person.picture %}
+										<img src="{% url 'profile_photo' person %}"  width="80px"  height="100px" alt="" style="max-height:100px" class="img-rounded img-responsive" /><br/>
+									{% else %}
+										<img src="/static/themes/images/media/profile-photos/default.png"  width="80px"  height="100px" alt="" style="max-height:100px" class="img-rounded img-responsive" /><br/>
+									{% endif %}
+									<div class="confirm-friend-box">
+										<span class="sale_tag"></span>
+										<a href="/otheruserprofile/{{ person }}" class="title">{{ person }}</a><br/>
+										<a href="/otheruserprofile/{{ person }}" class="title">{{ person.univaff }}</a></br>
+										<a href="/otheruserprofile/{{ person }}" class="category">View Profile</a>
+									</div>
+								</li>
+							</ul>
+						</div>
+					{% endif %}
+					{% endfor %}																	
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>					
+	</div>
+	</div>								
+</section>
+{% endblock %}
+
+{% block footer %}
+<section id="footer-bar">
+	<div class="row">
+		<div class="span5 offset4">
+			<p class="logo"><img src="/static/themes/images/logo.png" class="site_logo" alt=""></p>
+			<p>Welcome to Sportifiers! Here you could either post a university sports event or find your interested one.</p>
+				
+			<p>Hanging out with your best friends at always the lowest price! </p>
+			<br/>
+		</div>
+	</div>
+	
+</section>
+<section id="copyright">
+	<p>Copyright 2013 Sportifiers  All right reserved.</p>
+</section>
+{% endblock %}

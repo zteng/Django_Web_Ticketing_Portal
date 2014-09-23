@@ -1,0 +1,128 @@
+{% extends	"webapp/register_login.html" %}
+
+{% block header %}
+<meta charset="utf-8">
+<title>Sportifier</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="">
+<!--[if ie]><meta content='IE=8' http-equiv='X-UA-Compatible'/><![endif]-->
+<!-- bootstrap -->
+<link href="/static/bootstrap/css/bootstrap.min.css" rel="stylesheet">      
+<link href="/static/bootstrap/css/bootstrap-responsive.min.css" rel="stylesheet">		
+<link href="/static/themes/css/bootstrappage.css" rel="stylesheet"/>
+
+<!-- global styles -->
+<link href="/static/themes/css/flexslider.css" rel="stylesheet"/>
+<link href="/static/themes/css/main.css" rel="stylesheet"/>
+<link href="/static/themes/css/myvcss.css" rel="stylesheet"/>
+
+<!-- scripts -->
+<script src="/static/themes/js/jquery-1.7.2.min.js"></script>
+<script src="/static/bootstrap/js/bootstrap.min.js"></script>				
+<script src="/static/themes/js/superfish.js"></script>	
+<script src="/static/themes/js/jquery.scrolltotop.js"></script>
+<script src="/static/themes/js/common.js"></script>
+<!--[if lt IE 9]>			
+	<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+	<script src="js/respond.min.js"></script>
+<![endif]-->
+{% endblock %}
+
+{% block menu %}
+<section class="navbar main-menu">
+	<div class="navbar-inner main-menu">				
+		<a href="#" class="logo pull-left"><img src="/static/themes/images/logo.png" style="max-width: 45%;" class="site_logo" alt=""></a>
+		<nav id="menu" class="pull-right">
+			<ul>
+				<li><a href="/">Events</a>
+				</li>															
+				<li class="active"><a href="/userprofile/{{ username}}">User profile</a></li>			
+				<li><a href="#">privacy settings</a>
+				</li>							
+				<li><a href="/logout">Sign out</a></li>
+			</ul>
+		</nav>
+	</div>
+</section>
+{% endblock %}
+
+{% block main_content %}
+<section class="main-content" style="margin-top:15px">
+<div class="row">
+	<div class="row">						
+		<div class="span9" style="margin-right:30px">								
+			<div class="span3">
+			   <form enctype="multipart/form-data" action="{% url 'editprofile' %}" method="post">
+					<div class="span2">
+						{% if profile.picture %}
+							<img src="{% url 'profile_photo' username %}" alt="" class="img-rounded img-responsive" />
+						{% else %}
+							<img src="/static/themes/images/media/profile-photos/default.png" alt="" class="img-rounded img-responsive" />
+						{% endif %}	                            
+						{{ edit_form.picture }}
+					</div>	                 
+				<div class="span3">
+				<h4>
+					{{ username }}</h4>
+				</div>
+			</div>
+			<div class="span5">	
+					<div class="container col-lg-6">
+					  <h4 class="profile-header"><strong>{{ username }}</strong> 's information</h4>
+					  <div class="container"><div class="info-attribute pull-left">Name:&nbsp;&nbsp; </div><div>{{ edit_form.fullName }}</div></div>
+					  <div class="container"><div class="info-attribute pull-left">Gender:&nbsp;&nbsp; </div><div>{{ edit_form.sex }}</div></div>
+					  <div class="container"><div class="info-attribute pull-left">About Me:&nbsp;&nbsp; </div><div>{{ edit_form.aboutMe }}</div></div>						          
+					  <div class="container"><div class="info-attribute pull-left">Mobile Phone *(required):&nbsp;&nbsp; </div><div>{{ edit_form.phone }}</div></div>
+					  <div class="container"><div class="info-attribute pull-left">Interests:&nbsp;&nbsp; </div><div>{{ edit_form.interests }}</div></div>
+					  <div class="container"><div class="info-attribute pull-left">Address:&nbsp;&nbsp; </div><div>{{ edit_form.address }}</div></div>						          
+
+						{% if edit_form.errors %}
+						<div>
+						{% for error in edit_form.errors %}
+						<div class="alert alert-error">
+							<p class="close" data-dismiss="alert" href="#">×</p>{{ error}} field is invalid
+						</div>
+						{% endfor %}
+						</div>
+						{% endif %} 
+						
+						{% if errors %}
+						<div>
+						{% for error in errors %}
+						<div class="alert alert-error">
+							<p class="close" data-dismiss="alert" href="#">×</p>{{ error }}
+						</div>
+						{% endfor %}
+						</div>
+						{% endif %}
+						
+					<!-- submit button to submit changes to the profile -->
+					  <input type="submit" class="btn btn-info" value="Save changes" />
+					{% csrf_token %}
+					</div>			        
+				</form>
+		  </div> 
+	   
+		</div>
+	</div>
+</div>								
+</section>
+{% endblock %}		
+	
+{% block footer %}
+<section id="footer-bar">
+	<div class="row">
+		<div class="span5 offset4">
+			<p class="logo"><img src="/static/themes/images/logo.png" class="site_logo" alt=""></p>
+			<p>Welcome to Sportifiers! Here you could either post a university sports event or find your interested one.</p>
+				
+			<p>Hanging out with your best friends at always the lowest price! </p>
+			<br/>
+		</div>
+	</div>
+	
+</section>
+<section id="copyright">
+	<p>Copyright 2013 Sportifiers  All right reserved.</p>
+</section>
+{% endblock %}

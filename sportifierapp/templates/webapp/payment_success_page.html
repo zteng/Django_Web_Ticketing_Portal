@@ -1,0 +1,111 @@
+{% extends	"webapp/register_login.html" %}
+
+{% block header %}
+<meta charset="utf-8">
+<title>Sportifiers</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="">
+<!--[if ie]><meta content='IE=8' http-equiv='X-UA-Compatible'/><![endif]-->
+<!-- bootstrap -->
+<link href="/static/bootstrap/css/bootstrap.min.css" rel="stylesheet">      
+<link href="/static/bootstrap/css/bootstrap-responsive.min.css" rel="stylesheet">		
+<link href="/static/themes/css/bootstrappage.css" rel="stylesheet"/>
+
+<!-- global styles -->
+<link href="/static/themes/css/flexslider.css" rel="stylesheet"/>
+<link href="/static/themes/css/main.css" rel="stylesheet"/>
+
+<!-- scripts -->
+<script src="/static/themes/js/jquery-1.7.2.min.js"></script>
+<script src="/static/bootstrap/js/bootstrap.min.js"></script>				
+<script src="/static/themes/js/superfish.js"></script>	
+<script src="/static/themes/js/jquery.scrolltotop.js"></script>
+<script src="/static/themes/js/ajax_search_date.js"></script>
+<script src="/static/themes/js/ajax_search_type.js"></script>
+<script src="/static/themes/js/ajax_search_home_uni.js"></script>
+<!--<link rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css" />-->
+<script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+<script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
+<script src="/static/themes/js/common.js"></script>
+<script>
+	$(function() {
+		$( ".block" ).accordion();
+	});
+</script>
+{% endblock %}
+
+{% block menu %}
+<section class="navbar main-menu">
+	<div class="navbar-inner main-menu">				
+		<a href="#" class="logo pull-left"><img src="/static/themes/images/logo.png" style="max-width: 45%;" class="site_logo" alt=""></a>
+		<nav id="menu" class="pull-right">
+			<ul>
+				<li><a href="/">Events</a>					
+				</li>															
+				<li><a href="/userprofile/{{ username}}">User profile</a></li>			
+				<li><a href="/settings">privacy settings</a></li>
+				<li><a href="/logout">Sign out</a></li>
+			</ul>
+		</nav>
+	</div>
+</section>	
+<section class="header_text sub">
+<img class="pageBanner" src="/static/themes/images/pageBanner.png" alt="New products" >
+</section>
+{% endblock %}
+
+{% block main_content %}
+<section class="main-content">
+	<div class="row">	
+		<div class="container span6 offset3">
+			<div class="row">
+				<div class="well col-xs-10 col-sm-10 col-md-6 col-xs-offset-1 col-sm-offset-1 col-md-offset-3">
+					
+					<div class="row" style="margin-left:30px">
+						<div class="text-center">
+							<h3>Transaction Success</h3>
+							<p>The payment has been successfully placed and a confirmation email with details has been sent to you and your friends.</p>
+							<h5>Enjoy the match!</h5>
+						</div>
+						
+						<div class="row" style="margin-left:30px">
+							<div style="float:left">
+								<a type="button" class="btn btn-success btn-lg btn-block" href="/logout">
+									Logout  
+								</a>
+							</div>
+							<div style="float:right">
+								<a type="button" class="btn btn-success btn-lg btn-block" href="/">
+									Go back to Home
+								</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+{% endblock %}
+
+{% block footer %}
+<section id="footer-bar">
+	<div class="row">
+		<div class="span5 offset4">
+			<p class="logo"><img src="/static/themes/images/logo.png" class="site_logo" alt=""></p>
+			<p>Welcome to Sportifiers! Here you could either post a university sports event or find your interested one.</p>
+				
+			<p>Hanging out with your best friends is always the lowest price! </p>
+			<br/>
+		</div>
+	</div>
+	
+</section>
+<section id="copyright">
+	<p>Copyright 2013 Sportifiers  All right reserved.</p>
+</section>
+{% endblock %}
+
+
+
+

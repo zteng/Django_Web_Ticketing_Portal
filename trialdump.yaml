@@ -1,0 +1,443 @@
+﻿SQLite format 3   @                                                                          
+ü Õ fÏÕ                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   GGtablebulkloader_database_signaturebulkloader_database_signatureCREATE TABLE bulkloader_database_signature (
+      value TEXT not null)g)tableresultresultCREATE TABLE result (
+id BLOB primary key,
+value BLOB not null,
+sort_key BLOB)+? indexsqlite_autoindex_result_1result      o    (ûöñìçâÝØÓÎÉÄ¿ºµ°«¦¡œ—’ˆƒ~yto                                                                                                                                                                                                                                 ‚td…
+:sportifierapp_profile  00005629499534213120j3j
+s~usportifierr"sportifierapp_profile€€€€€€€
+raboutMe  * raddress  * r!email  *tengz@andrew.cmu.edurfullName  * r	interests  * r
+phone  * rpicture  * rsex  * r
+univaff_id  *rusertype  *	student‚"sportifierapp_profile€€€€€€€
+Š"
+sportfier@gmail.com	gmail.com  ‚_d„h
+:sportifierapp_profile  00000000000000000002j,j
+s~usportifierrsportifierapp_profileraboutMe  * raddress  * remail  *
+vkasi@cmu.edurfullName  * r	interests  * r
+phone  *   ']   &Y   $U   #Q   "M    I   E   A   =   9   6   4   2   0   -   )   &   $   "                
+   	      
+      ’ å    Ñ¨å [I ó \ ‹:Ô¡Ïžm º                                            .`:django_content_type  00000000000000000001.`:sportifierapp_event  000000000000000000018t:sportifierapp_universityadmin  00000000000000000001*X:auth_permission  00000000000000000010*X:auth_permission  00000000000000000009*X:auth_permission  00000000000000000008*X:auth_permission  00000000000000000007*X:auth_permission  00000000000000000006
+*X:auth_permission  00000000000000000005*X:auth_permission  00000000000000000004*X:auth_permission  00000000000000000003
+*X:auth_permission  00000000000000000002	*X:auth_permission  000000000000000000012h:sportifierapp_eventtype  000000000000000000042h:sportifierap   6p:django_session  :bcr7gszfpfbi514k4bj1iqw69e4f6fdz    %6p:django_session  :u6cyf3eb4c382753xoensd81q5czk4w36   !2h:sportifierapp_eventtype  00000000000000000003      ;6p   3.`:d   
+$L:auth_user  000000000000000000011   *X:auth_permission  00000000000000000023I
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           lƒ_
+  app_id: s~usportifier
+  url: http://usportifier.appspot.com/_ah/remote_api
+  kind: None
+  download: False
+  map: False
+  dump: True
+  restore: False
+  progress_db: bulkloader-progress-20131127.232313.sql3
+  has_header: False
+  
+  
+   ' ž'                                                                                                                                                                                                                                                                                           ‚td…
+:sportifierapp_profile  00005629499534213120j3j
+s~usportifierr"sportifierapp_profile€€€€€€€
+raboutMe  * raddress  * r!email  *tengz@andrew.cmu.edurfullName  * r	interests  * r
+phone  * rpicture  * rsex  * r
+univaff_id  *rusertype  *	student‚"sportifierapp_profile€€€€€€€
+Š"
+sportfier@gmail.com	gmail.com  ‚_d„h
+:sportifierapp_profile  00000000000000000002j,j
+s~usportifierrsportifierapp_profileraboutMe  * raddress  * remail  *
+vkasi@cmu.edurfullName  * r	interests  * r
+phone  * rpicture  * rsex  * r
+univaff_id  *rusertype  *	student‚sportifierapp_profileŠ"
+sportfier@gmail.com	gmail.com  
+    E ˆÅ E                                                     >h‚"
+:sportifierapp_eventtype  00000000000000000003j.j
+s~usportifierrsportifierapp_eventtypertype  *
+Baseball‚sportifierapp_eventtypeŠ"
+sportfier@gmail.com	gmail.com  <h‚
+:sportifierapp_eventtype  00000000000000000002j.j
+s~usportifierrsportifierapp_eventtypertype  *Soccer‚sportifierapp_eventtypeŠ"
+sportfier@gmail.com	gmail.com  @h‚&
+:sportifierapp_eventtype  00000000000000000001j.j
+s~usportifierrsportifierapp_eventtypertype  *
+Volleyball‚sportifierapp_eventtypeŠ"
+sportfier@gmail.com	gmail.com  ‚ud…
+:sportifierapp_profile  00005707702298738688j3j
+s~usportifierr"sportifierapp_profile€€€€€ä‘
+raboutMe  * raddress  * r"email  *tengz900805@gmail.comrfullName  * r	interests  * r
+phone  * rpicture  * rsex  * r
+univaff_id  *rusertype  *	student‚"sportifierapp_profile€€€€€ä‘
+Š"
+sportfier@gmail.com	gmail.com  
+    m =Q_ m                                                                                             o
+Xƒ
+:auth_permission  00000000000000000003j&j
+s~usportifierrauth_permissionr!codename  *delete_permissionrcontent_type_id  *r!name  *Can delete permission‚auth_permissionŠ"
+sportfier@gmail.com	gmail.com  o	Xƒ
+:auth_permission  00000000000000000002j&j
+s~usportifierrauth_permissionr!codename  *change_permissionrcontent_type_id  *r!name  *Can change permission‚auth_permissionŠ"
+sportfier@gmail.com	gmail.com  iXƒ
+:auth_permission  00000000000000000001j&j
+s~usportifierrauth_permissionrcodename  *add_permissionrcontent_type_id  *rname  *Can add permission‚auth_permissionŠ"
+sportfier@gmail.com	gmail.com  @h‚&
+:sportifierapp_eventtype  00000000000000000004j.j
+s~usportifierrsportifierapp_eventtypertype  *
+Basketball‚sportifierapp_eventtypeŠ"
+sportfier@gmail.com	gmail.com  
+    n 6N n                                                                                              ]X‚p
+:auth_permission  00000000000000000007j&j
+s~usportifierrauth_permissionrcodename  *
+add_userrcontent_type_id  *rname  *Can add user‚auth_permissionŠ"
+sportfier@gmail.com	gmail.com  e
+Xƒ 
+:auth_permission  00000000000000000006j&j
+s~usportifierrauth_permissionrcodename  *delete_grouprcontent_type_id  *rname  *Can delete group‚auth_permissionŠ"
+sportfier@gmail.com	gmail.com  eXƒ 
+:auth_permission  00000000000000000005j&j
+s~usportifierrauth_permissionrcodename  *change_grouprcontent_type_id  *rname  *Can change group‚auth_permissionŠ"
+sportfier@gmail.com	gmail.com  _X‚t
+:auth_permission  00000000000000000004j&j
+s~usportifierrauth_permissionrcodename  *	add_grouprcontent_type_id  *rname  *
+Can add group‚auth_permissionŠ"
+sportfier@gmail.com	gmail.com  
+    b 4E b                                                                                  `t‚Z
+:sportifierapp_universityadmin  00000000000000000001j4j
+s~usportifierr#sportifierapp_universityadminradmin_id  *r
+univaff_id  *‚#sportifierapp_universityadminŠ"
+sportfier@gmail.com	gmail.com  lXƒ
+:auth_permission  00000000000000000010j&j
+s~usportifierrauth_permission
+rcodename  *add_contenttypercontent_type_id  *r name  *Can add content type‚auth_permission
+Š"
+sportfier@gmail.com	gmail.com  cX‚|
+:auth_permission  00000000000000000009j&j
+s~usportifierrauth_permission	rcodename  *
+delete_userrcontent_type_id  *rname  *Can delete user‚auth_permission	Š"
+sportfier@gmail.com	gmail.com  cX‚|
+:auth_permission  00000000000000000008j&j
+s~usportifierrauth_permissionrcodename  *
+change_userrcontent_type_id  *rname  *Can change user‚auth_permissionŠ"
+sportfier@gmail.com	gmail.com  
+    »  »                                                                                                                                                                                 †B`Œ2
+:sportifierapp_event  00000000000000000001j*j
+s~usportifierrsportifierapp_eventradmin_id  *r%areticketsavailableatvenue  *yesraway_id  *r"awaystaffticketprice  *016.00r$awaystudentticketprice  *015.00r&awaysupporterticketprice  *017.00rchampionship  *
+Regionalrdescription  *	awesomer
+event_date  *
+2013-11-26r"event_parse_date  *
+2013-11-26r)event_parse_time  *Saturday, 2:58 PMr
+event_time  *14:58r"homestaffticketprice  *013.00r$homestudentticketprice  *012.00r&homesupporterticketprice  *014.00rhost_id  *r+locationlattitude  *-33.87355116367458r+locationlongitude  *151.18151485919952rlocationname  *
+Building 3rmaxnumberoftickets  *drtype_id  *‚sportifierapp_eventŠ"
+sportfier@gmail.com	gmail.com  
+    o <a o                                                                                               o`ƒ
+:django_content_type  00000000000000000004j*j
+s~usportifierrdjango_content_typer	app_label  *contenttypesrmodel  *
+contenttypername  *content type‚django_content_typeŠ"
+sportfier@gmail.com	gmail.com  X`‚^
+:django_content_type  00000000000000000003j*j
+s~usportifierrdjango_content_typer	app_label  *authrmodel  *userrname  *user‚django_content_typeŠ"
+sportfier@gmail.com	gmail.com  Z`‚b
+:django_content_type  00000000000000000002j*j
+s~usportifierrdjango_content_typer	app_label  *authrmodel  *grouprname  *group‚django_content_typeŠ"
+sportfier@gmail.com	gmail.com  d`‚v
+:django_content_type  00000000000000000001j*j
+s~usportifierrdjango_content_typer	app_label  *authrmodel  *
+permissionrname  *
+permission‚django_content_typeŠ"
+sportfier@gmail.com	gmail.com  
+    N  N y ¤ Ï ú%P{¦Ñü'R}¨Óþ)TªÕÛ     *X:auth_permissio*X:auth_permission  00000000000000000001*X:auth_permission  00000000000000000002	*X:auth_permission  00000000000000000003
+*X:auth_permission  00000000000000000004*X:auth_permission  00000000000000000005*X:auth_permission  00000000000000000006
+*X:auth_permission  00000000000000000007*X:auth_permission  00000000000000000008*X:auth_permission  00000000000000000009*X:auth_permission  00000000000000000010*X:auth_permission  000000000000000000118*X:auth_permission  000000000000000000129*X:auth_permission  00000000000000000013:*X:auth_permission  00000000000000000014;*X:auth_permission  00000000000000000015<*X:auth_permission  00000000000000000016=*X:auth_permission  00000000000000000017>*X:auth_permission  00000000000000000018?*X:auth_permission  00000000000000000019@*X:auth_permission  00000000000000000020A*X:auth_permission  00000000000000000021G*X:auth_permission  00000000000000000022H
+    N  N y ¤ Ï ú%P{¦Ñü'R}¨Óþ)TªÕÛ*X:*X:auth_permissio*X:auth_permission  00000000000000000024J*X:auth_permission  00000000000000000025K*X:auth_permission  00000000000000000026L*X:auth_permission  00000000000000000027M*X:auth_permission  00000000000000000028N*X:auth_permission  00000000000000000029O*X:auth_permission  00000000000000000030P*X:auth_permission  00000000000000000031Q*X:auth_permission  00000000000000000032R*X:auth_permission  00000000000000000033S*X:auth_permission  00000000000000000034T*X:auth_permission  00000000000000000035U*X:auth_permission  00000000000000000036V*X:auth_permission  00000000000000000037W*X:auth_permission  00000000000000000038X*X:auth_permission  00000000000000000039Y*X:auth_permission  00000000000000000040Z*X:auth_permission  00000000000000000041[*X:auth_permission  00000000000000000042\*X:auth_permission  00000000000000000043]*X:auth_permission  00000000000000000044^*X:auth_permission  00000000000000000045_
+    V ?O V                                                                      v`ƒ
+:django_content_type  00000000000000000008j*j
+s~usportifierrdjango_content_typer	app_label  *
+sportifierapprmodel  *awayuniversityrname  *away university‚django_content_typeŠ"
+sportfier@gmail.com	gmail.com  m`ƒ
+:django_content_type  00000000000000000007j*j
+s~usportifierrdjango_content_typer	app_label  *
+sportifierapprmodel  *
+universityrname  *
+university‚django_content_typeŠ"
+sportfier@gmail.com	gmail.com  Y`‚`
+:django_content_type  00000000000000000006j*j
+s~usportifierrdjango_content_typer	app_label  *sitesrmodel  *sitername  *site‚django_content_typeŠ"
+sportfier@gmail.com	gmail.com  b`‚r
+:django_content_type  00000000000000000005j*j
+s~usportifierrdjango_content_typer	app_label  *
+sessionsrmodel  *	sessionrname  *	session‚django_content_typeŠ"
+sportfier@gmail.com	gmail.com  
+    Ê  Ê                                                                                                                                                                                            ‚Np„:
+:django_session  :0ml1wqrwfwnghcrfmr4wbtemmm4frj1mjEj
+s~usportifierr4django_session" 0ml1wqrwfwnghcrfmr4wbtemmm4frj1mrexpire_date  *	ØÇØ š§»zVsession_data  *B@OGYxN2JjN2ZjNjc4NzNjMjJkZmViNTZlN2RhOGY4MzQ2NmE5MTJlYjqAAn1xAS4=‚4django_session" 0ml1wqrwfwnghcrfmr4wbtemmm4frj1mŠ 
+vrnkasi@gmail.com	gmail.com  x`ƒ
+:django_content_type  00000000000000000010j*j
+s~usportifierrdjango_content_type
+r	app_label  *
+sportifierapprmodel  *universityadminrname  *university admin‚django_content_type
+Š"
+sportfier@gmail.com	gmail.com  g`‚|
+:django_content_type  00000000000000000009j*j
+s~usportifierrdjango_content_type	r	app_label  *
+sportifierapprmodel  *	profilername  *	profile‚django_content_type	Š"
+sportfier@gmail.com	gmail.com  
+    h 2 h                                                                                            ƒG p†,
+:django_session  :bcr7gszfpfbi514k4bj1iqw69e4f6fdzjEj
+s~usportifierr4django_session" bcr7gszfpfbi514k4bj1iqw69e4f6fdzrexpire_date  *	µŽŸÅ»zÌsession_data  *·´OGEyMGUzMTgwZjNiOTk1OGZiZThmOTk4OTU0ZjE1NzU5NTgyNjkzMDqAAn1xAShVEl9hdXRoX3VzZXJfYmFja2VuZHECVSlkamFuZ28uY29udHJpYi5hdXRoLmJhY2tlbmRzLk1vZGVsQmFja2VuZHEDVQ1fYXV0aF91c2VyX2lkcQRLAnUu‚4django_session" bcr7gszfpfbi514k4bj1iqw69e4f6fdzŠ"
+sportfier@gmail.com	gmail.com  ƒKp†4
+:django_session  :3ezovl59s5z26vat6o14f77p37zhk4zmjEj
+s~usportifierr4django_session" 3ezovl59s5z26vat6o14f77p37zhk4zmrexpire_date  *	šƒäÁá©»zÐsession_data  *»¸ODhiOTgyMTM1OWNiODRjY2UyNzUzYzAzZTg0ZmIwMGEzMTc3ZDY4YTqAAn1xAShVEl9hdXRoX3VzZXJfYmFja2VuZHECVSlkamFuZ28uY29udHJpYi5hdXRoLmJhY2tlbmRzLk1vZGVsQmFja2VuZHEDVQ1fYXV0aF91c2VyX2lkcQSKAQJ1Lg==‚4django_session" 3ezovl59s5z26vat6o14f77p37zhk4zmŠ"
+sportfier@gmail.com	gmail.com  
+    å 6 å                                                                                                                                                                                                                         ‚N"p„:
+:django_session  :kaacqr3tiwqia04zjfg4znhjg0biqkv8jEj
+s~usportifierr4django_session" kaacqr3tiwqia04zjfg4znhjg0biqkv8rexpire_date  *	ŒÓôîâ§»zVsession_data  *B@OGYxN2JjN2ZjNjc4NzNjMjJkZmViNTZlN2RhOGY4MzQ2NmE5MTJlYjqAAn1xAS4=‚4django_session" kaacqr3tiwqia04zjfg4znhjg0biqkv8Š 
+vrnkasi@gmail.com	gmail.com  ƒG!p†,
+:django_session  :fyu1qpmeyj0xb9cc0grrjvz0vnwliixojEj
+s~usportifierr4django_session" fyu1qpmeyj0xb9cc0grrjvz0vnwliixorexpire_date  *	øùÿï‰»zÌsession_data  *·´OTg1YmE4M2Y5ZTc4Y2ZiNmRjYjcyMTA1YTFjNmUzNDc5YjIzM2FjODqAAn1xAShVEl9hdXRoX3VzZXJfYmFja2VuZHECVSlkamFuZ28uY29udHJpYi5hdXRoLmJhY2tlbmRzLk1vZGVsQmFja2VuZHEDVQ1fYXV0aF91c2VyX2lkcQRLAXUu‚4django_session" fyu1qpmeyj0xb9cc0grrjvz0vnwliixoŠ"
+sportfier@gmail.com	gmail.com  
+   ^ ¯^                                                                                                                                                                                                                                                                                                                                                  ‚N$p„:
+:django_session  :ok5t25t2hdnbq7sb26y4vykxrv7nmbfcjEj
+s~usportifierr4django_session" ok5t25t2hdnbq7sb26y4vykxrv7nmbfcrexpire_date  *	–œ¹ÇÑ©»zVsession_data  *B@OGYxN2JjN2ZjNjc4NzNjMjJkZmViNTZlN2RhOGY4MzQ2NmE5MTJlYjqAAn1xAS4=‚4django_session" ok5t25t2hdnbq7sb26y4vykxrv7nmbfcŠ 
+vrnkasi@gmail.com	gmail.com  ‚N#p„:
+:django_session  :nbhi1uf4dkvltxxcwghwnb495t3iudg7jEj
+s~usportifierr4django_session" nbhi1uf4dkvltxxcwghwnb495t3iudg7rexpire_date  *	ˆ‘””¿©»zVsession_data  *B@OGYxN2JjN2ZjNjc4NzNjMjJkZmViNTZlN2RhOGY4MzQ2NmE5MTJlYjqAAn1xAS4=‚4django_session" nbhi1uf4dkvltxxcwghwnb495t3iudg7Š 
+vrnkasi@gmail.com	gmail.com  
+    h 6 h                                                                                            ƒK&p†4
+:django_session  :rnbwvre0g848dzm5arunixz4x6n2wbfhjEj
+s~usportifierr4django_session" rnbwvre0g848dzm5arunixz4x6n2wbfhrexpire_date  *	ÒÞÏèÅ©»zÐsession_data  *»¸ODhiOTgyMTM1OWNiODRjY2UyNzUzYzAzZTg0ZmIwMGEzMTc3ZDY4YTqAAn1xAShVEl9hdXRoX3VzZXJfYmFja2VuZHECVSlkamFuZ28uY29udHJpYi5hdXRoLmJhY2tlbmRzLk1vZGVsQmFja2VuZHEDVQ1fYXV0aF91c2VyX2lkcQSKAQJ1Lg==‚4django_session" rnbwvre0g848dzm5arunixz4x6n2wbfhŠ"
+sportfier@gmail.com	gmail.com  ƒG%p†,
+:django_session  :qu0b97e3jox4uvbcv5y7miom7ei2196bjEj
+s~usportifierr4django_session" qu0b97e3jox4uvbcv5y7miom7ei2196brexpire_date  *	˜äÈ˜®¡»zÌsession_data  *·´OGEyMGUzMTgwZjNiOTk1OGZiZThmOTk4OTU0ZjE1NzU5NTgyNjkzMDqAAn1xAShVEl9hdXRoX3VzZXJfYmFja2VuZHECVSlkamFuZ28uY29udHJpYi5hdXRoLmJhY2tlbmRzLk1vZGVsQmFja2VuZHEDVQ1fYXV0aF91c2VyX2lkcQRLAnUu‚4django_session" qu0b97e3jox4uvbcv5y7miom7ei2196bŠ"
+sportfier@gmail.com	gmail.com  
+    Å ­µ Å                                                                                                                                                                                       m)j‚~
+:sportifierapp_university  00000000000000000002j/j
+s~usportifierrsportifierapp_universityrlogo  * rname  *Cornell Universityr
+short_name  * ‚sportifierapp_universityŠ"
+sportfier@gmail.com	gmail.com  u(jƒ
+:sportifierapp_university  00000000000000000001j/j
+s~usportifierrsportifierapp_universityrlogo  * r&name  *Carnegie Mellon Universityr
+short_name  * ‚sportifierapp_universityŠ"
+sportfier@gmail.com	gmail.com  ‚P'p„>
+:django_session  :skn83md4y89rb3yzoubobv9jf40ilzitjEj
+s~usportifierr4django_session" skn83md4y89rb3yzoubobv9jf40ilzitrexpire_date  *	”ÞŸÆÑ©»zVsession_data  *B@OGYxN2JjN2ZjNjc4NzNjMjJkZmViNTZlN2RhOGY4MzQ2NmE5MTJlYjqAAn1xAS4=‚4django_session" skn83md4y89rb3yzoubobv9jf40ilzitŠ"
+sportfier@gmail.com	gmail.com  
+    b  b ‡ ¬ Ñ /^¼ëIx§Ö4c’É              6p:django_session  :fyu1qp.`:dja$L:auth_user  000000000000000000022$L:auth_user  000056294995342131203$L:auth_user  000057077022987386884.`:django_content_type  00000000000000000001.`:django_content_type  00000000000000000002.`:django_content_type  00000000000000000003.`:django_content_type  00000000000000000004.`:django_content_type  00000000000000000005.`:django_content_type  00000000000000000006.`:django_content_type  00000000000000000007.`:django_content_type  00000000000000000008.`:django_content_type  00000000000000000009.`:django_content_type  00000000000000000010.`:django_content_type  00000000000000000011B.`:django_content_type  00000000000000000012C.`:django_content_type  00000000000000000013D.`:django_content_type  00000000000000000014E.`:django_content_type  00000000000000000015F6p:django_session  :0ml1wqrwfwnghcrfmr4wbtemmm4frj1m6p:django_session  :3ezovl59s5z26vat6o14f77p37zhk4zm
+    ’ a ’                                                                                                                                  L-r‚4
+:sportifierapp_awayuniversity  00000000000000000001j3j
+s~usportifierr"sportifierapp_awayuniversityraway_uni_id  *‚"sportifierapp_awayuniversityŠ"
+sportfier@gmail.com	gmail.com  8,P‚.
+:django_site  00000000000000000001j"j
+s~usportifierrdjango_siterdomain  *
+example.comrname  *
+example.com‚django_siteŠ"
+sportfier@gmail.com	gmail.com  p+jƒ
+:sportifierapp_university  00000000000000000004j/j
+s~usportifierrsportifierapp_universityrlogo  * r!name  *Pittsburgh Universityr
+short_name  * ‚sportifierapp_universityŠ"
+sportfier@gmail.com	gmail.com  n*jƒ 
+:sportifierapp_university  00000000000000000003j/j
+s~usportifierrsportifierapp_universityrlogo  * rname  *Duquesne Universityr
+short_name  * ‚sportifierapp_universityŠ"
+sportfier@gmail.com	gmail.com  
+   “ 1b“                                                                                                                                                                                                                                                                                                                                                                                                     L0r‚4
+:sportifierapp_awayuniversity  00000000000000000004j3j
+s~usportifierr"sportifierapp_awayuniversityraway_uni_id  *‚"sportifierapp_awayuniversityŠ"
+sportfier@gmail.com	gmail.com  L/r‚4
+:sportifierapp_awayuniversity  00000000000000000003j3j
+s~usportifierr"sportifierapp_awayuniversityraway_uni_id  *‚"sportifierapp_awayuniversityŠ"
+sportfier@gmail.com	gmail.com  L.r‚4
+:sportifierapp_awayuniversity  00000000000000000002j3j
+s~usportifierr"sportifierapp_awayuniversityraway_uni_id  *‚"sportifierapp_awayuniversityŠ"
+sportfier@gmail.com	gmail.com  
+    ˜ H ˜                                                                                                                                            ƒ-2L†
+:auth_user  00000000000000000002j j
+s~usportifierr	auth_userrdate_joined  *	à×ë‚«íºremail  *
+vkasi@cmu.edur
+first_name  * r	is_active  *ris_staff  * ris_superuser  * r
+last_login  *	ˆýÀ³Ç†»r	last_name  * r]password  *OMpbkdf2_sha256$10000$s9atambgjmu2$kRnG+abB8dYdRLNdPhJ7VnCIqiveKrLTL6mXM1G77gw=rusername  *vkasi‚	auth_userŠ"
+sportfier@gmail.com	gmail.com  ƒ51L†,
+:auth_user  00000000000000000001j j
+s~usportifierr	auth_userrdate_joined  *	€Ò’ûÛìºremail  *
+admin@cmu.edur
+first_name  * r	is_active  *ris_staff  * ris_superuser  * r
+last_login  *	à’šã‚ýºr	last_name  * r]password  *OMpbkdf2_sha256$10000$2WP1cyrwQ1Sw$TD4fmlVhd9atkYlXRUbQpONP9cHv1KGch8AmuLahatg=rusername  *
+adminCMUadmin‚	auth_userŠ"
+sportfier@gmail.com	gmail.com  
+    k 5 k                                                                                               ƒG4L†P
+:auth_user  00005707702298738688j'j
+s~usportifierr	auth_user€€€€€ä‘
+rdate_joined  *	ÞŒ÷Ã¹†»r"email  *tengz900805@gmail.comr
+first_name  * r	is_active  *ris_staff  * ris_superuser  * r
+last_login  *	¸ãòØ¹†»r	last_name  * r]password  *OMpbkdf2_sha256$10000$0bj2SpdZSvJv$ZaPw0Jy6fiWOiBrPlSzj+O8m6DSB6T9SGRKAPvACPvM=rusername  *	tengzhang‚	auth_user€€€€€ä‘
+Š"
+sportfier@gmail.com	gmail.com  ƒH3L†R
+:auth_user  00005629499534213120j'j
+s~usportifierr	auth_user€€€€€€€
+rdate_joined  *	Â¯Ø¹†»r!email  *tengz@andrew.cmu.edur
+first_name  * r	is_active  *ris_staff  * ris_superuser  * r
+last_login  *	”ÚÀ¬º†»r	last_name  * r]password  *OMpbkdf2_sha256$10000$WeDRTwul1RR3$4RCm8mHcNSqWOX3JZTJyNvCPX+kNFACoIKKPptUo/fg=rusername  *	zhangteng‚	auth_user€€€€€€€
+Š$
+tengz900805@gmail.com	gmail.com  
+   Q ¦Q                                                                                                                                                                                                                                                                                                                                     ‚R6p„B
+:django_session  :u6cyf3eb4c382753xoensd81q5czk4w3jEj
+s~usportifierr4django_session" u6cyf3eb4c382753xoensd81q5czk4w3rexpire_date  *	¨Ä¾öÞ©»zVsession_data  *B@OGYxN2JjN2ZjNjc4NzNjMjJkZmViNTZlN2RhOGY4MzQ2NmE5MTJlYjqAAn1xAS4=‚4django_session" u6cyf3eb4c382753xoensd81q5czk4w3Š$
+tengz900805@gmail.com	gmail.com  ‚W5p„L
+:django_session  :tuyb2fg2gm5kr3579xww9at8o5yb42chjEj
+s~usportifierr4django_session" tuyb2fg2gm5kr3579xww9at8o5yb42chrexpire_date  *	Ð³Ï•Ñ©»zVsession_data  *B@OGYxN2JjN2ZjNjc4NzNjMjJkZmViNTZlN2RhOGY4MzQ2NmE5MTJlYjqAAn1xAS4=‚4django_session" tuyb2fg2gm5kr3579xww9at8o5yb42chŠ)
+snehaprabhanarra@gmail.com	gmail.com  
+    › … ›                                                                                                                                             r9Xƒ
+:auth_permission  00000000000000000012j&j
+s~usportifierrauth_permissionr"codename  *delete_contenttypercontent_type_id  *r#name  *Can delete content type‚auth_permissionŠ"
+sportfier@gmail.com	gmail.com  r8Xƒ
+:auth_permission  00000000000000000011j&j
+s~usportifierrauth_permissionr"codename  *change_contenttypercontent_type_id  *r#name  *Can change content type‚auth_permissionŠ"
+sportfier@gmail.com	gmail.com  ‚x7p…
+:django_session  :y49ksuqu75s0ghf8pjy7v36zcnb7dxm5jEj
+s~usportifierr4django_session" y49ksuqu75s0ghf8pjy7v36zcnb7dxm5rexpire_date  *	â…Ãü“§»z~session_data  *jhNzdiY2E2NzJiNmRkYzMxZWI2YzNmY2ZhZjkyYmIxNzA1MzQxMmU4NzqAAn1xAVgKAAAAdGVzdGNvb2tpZXECWAYAAAB3b3JrZWRxA3Mu‚4django_session" y49ksuqu75s0ghf8pjy7v36zcnb7dxm5Š"
+sportfier@gmail.com	gmail.com  
+    b .B b                                                                                  ]=X‚p
+:auth_permission  00000000000000000016j&j
+s~usportifierrauth_permissionrcodename  *
+add_sitercontent_type_id  *rname  *Can add site‚auth_permissionŠ"
+sportfier@gmail.com	gmail.com  i<Xƒ
+:auth_permission  00000000000000000015j&j
+s~usportifierrauth_permissionrcodename  *delete_sessionrcontent_type_id  *rname  *Can delete session‚auth_permissionŠ"
+sportfier@gmail.com	gmail.com  i;Xƒ
+:auth_permission  00000000000000000014j&j
+s~usportifierrauth_permissionrcodename  *change_sessionrcontent_type_id  *rname  *Can change session‚auth_permissionŠ"
+sportfier@gmail.com	gmail.com  c:X‚|
+:auth_permission  00000000000000000013j&j
+s~usportifierrauth_permission
+rcodename  *
+add_sessionrcontent_type_id  *rname  *Can add session‚auth_permission
+Š"
+sportfier@gmail.com	gmail.com  
+   	1 1d•Æ÷+_“Ç                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       2h:sportifierapp_eventtype  000000000000000000040d:sportifierapp_profile  000000000000000000020d:sportifierapp_profile  000056294995342131200d:sportifierapp_profile  000057077022987386883j:sportifierapp_university  00000000000000000001(3j:sportifierapp_university  00000000000000000002)3j:sportifierapp_university  00000000000000000003*3j:sportifierapp_university  00000000000000000004+8t:sportifierapp_universityadmin  00000000000000000001
+    V 4H V                                                                      oAXƒ
+:auth_permission  00000000000000000020j&j
+s~usportifierrauth_permissionr!codename  *change_universityrcontent_type_id  *r!name  *Can change university‚auth_permissionŠ"
+sportfier@gmail.com	gmail.com  i@Xƒ
+:auth_permission  00000000000000000019j&j
+s~usportifierrauth_permissionrcodename  *add_universityrcontent_type_id  *rname  *Can add university‚auth_permissionŠ"
+sportfier@gmail.com	gmail.com  c?X‚|
+:auth_permission  00000000000000000018j&j
+s~usportifierrauth_permissionrcodename  *
+delete_sitercontent_type_id  *rname  *Can delete site‚auth_permissionŠ"
+sportfier@gmail.com	gmail.com  c>X‚|
+:auth_permission  00000000000000000017j&j
+s~usportifierrauth_permissionrcodename  *
+change_sitercontent_type_id  *rname  *Can change site‚auth_permissionŠ"
+sportfier@gmail.com	gmail.com  
+    H +A H                                                        vE`ƒ
+:django_content_type  00000000000000000014j*j
+s~usportifierrdjango_content_typer	app_label  *
+sportifierapprmodel  *pendingfriendsrname  *pending friends‚django_content_typeŠ"
+sportfier@gmail.com	gmail.com  gD`‚|
+:django_content_type  00000000000000000013j*j
+s~usportifierrdjango_content_type
+r	app_label  *
+sportifierapprmodel  *	friendsrname  *	friends‚django_content_type
+Š"
+sportfier@gmail.com	gmail.com  cC`‚t
+:django_content_type  00000000000000000012j*j
+s~usportifierrdjango_content_typer	app_label  *
+sportifierapprmodel  *eventrname  *event‚django_content_typeŠ"
+sportfier@gmail.com	gmail.com  lB`ƒ
+:django_content_type  00000000000000000011j*j
+s~usportifierrdjango_content_typer	app_label  *
+sportifierapprmodel  *	eventtypername  *
+event type‚django_content_typeŠ"
+sportfier@gmail.com	gmail.com  
+    !  !                 xIXƒ&
+:auth_permission  00000000000000000023j&j
+s~usportifierrauth_permissionr%codename  *change_awayuniversityrcontent_type_id  *r&name  *Can change away university‚auth_permissionŠ"
+sportfier@gmail.com	gmail.com  rHXƒ
+:auth_permission  00000000000000000022j&j
+s~usportifierrauth_permissionr"codename  *add_awayuniversityrcontent_type_id  *r#name  *Can add away university‚auth_permissionŠ"
+sportfier@gmail.com	gmail.com  oGXƒ
+:auth_permission  00000000000000000021j&j
+s~usportifierrauth_permissionr!codename  *delete_universityrcontent_type_id  *r!name  *Can delete university‚auth_permissionŠ"
+sportfier@gmail.com	gmail.com  zF`ƒ"
+:django_content_type  00000000000000000015j*j
+s~usportifierrdjango_content_typer	app_label  *
+sportifierapprmodel  *transactioneventrname  *transaction event‚django_content_typeŠ"
+sportfier@gmail.com	gmail.com  
+   	- -d‹Ãû3kšÍ                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   6p:django_session  :y49ksuqu75s0ghf8pjy7v36zcnb7dxm57&P:django_site  00000000000000000001,7r:sportifierapp_awayuniversity  00000000000000000001-7r:sportifierapp_awayuniversity  00000000000000000002.7r:sportifierapp_awayuniversity  00000000000000000003/7r:sportifierapp_awayuniversity  000000000000000000040.`:sportifierapp_event  000000000000000000012h:sportifierapp_eventtype  000000000000000000012h:sportifierapp_eventtype  00000000000000000002
+    G 3 G                                                       iMXƒ
+:auth_permission  00000000000000000027j&j
+s~usportifierrauth_permissionrcodename  *delete_profilercontent_type_id  *	rname  *Can delete profile‚auth_permissionŠ"
+sportfier@gmail.com	gmail.com  iLXƒ
+:auth_permission  00000000000000000026j&j
+s~usportifierrauth_permissionrcodename  *change_profilercontent_type_id  *	rname  *Can change profile‚auth_permissionŠ"
+sportfier@gmail.com	gmail.com  cKX‚|
+:auth_permission  00000000000000000025j&j
+s~usportifierrauth_permissionrcodename  *
+add_profilercontent_type_id  *	rname  *Can add profile‚auth_permissionŠ"
+sportfier@gmail.com	gmail.com  xJXƒ&
+:auth_permission  00000000000000000024j&j
+s~usportifierrauth_permissionr%codename  *delete_awayuniversityrcontent_type_id  *r&name  *Can delete away university‚auth_permissionŠ"
+sportfier@gmail.com	gmail.com  
+    $ 	 $                    hQXƒ
+:auth_permission  00000000000000000031j&j
+s~usportifierrauth_permissionrcodename  *
+add_eventtypercontent_type_id  *rname  *Can add event type‚auth_permissionŠ"
+sportfier@gmail.com	gmail.com  zPXƒ*
+:auth_permission  00000000000000000030j&j
+s~usportifierrauth_permissionr&codename  *delete_universityadminrcontent_type_id  *
+r'name  *Can delete university admin‚auth_permissionŠ"
+sportfier@gmail.com	gmail.com  zOXƒ*
+:auth_permission  00000000000000000029j&j
+s~usportifierrauth_permissionr&codename  *change_universityadminrcontent_type_id  *
+r'name  *Can change university admin‚auth_permissionŠ"
+sportfier@gmail.com	gmail.com  tNXƒ
+:auth_permission  00000000000000000028j&j
+s~usportifierrauth_permissionr#codename  *add_universityadminrcontent_type_id  *
+r$name  *Can add university admin‚auth_permissionŠ"
+sportfier@gmail.com	gmail.com  
+    T < T                                                                    eUXƒ 
+:auth_permission  00000000000000000035j&j
+s~usportifierrauth_permission#rcodename  *change_eventrcontent_type_id  *rname  *Can change event‚auth_permission#Š"
+sportfier@gmail.com	gmail.com  _TX‚t
+:auth_permission  00000000000000000034j&j
+s~usportifierrauth_permission"rcodename  *	add_eventrcontent_type_id  *rname  *
+Can add event‚auth_permission"Š"
+sportfier@gmail.com	gmail.com  nSXƒ
+:auth_permission  00000000000000000033j&j
+s~usportifierrauth_permission!r codename  *delete_eventtypercontent_type_id  *r!name  *Can delete event type‚auth_permission!Š"
+sportfier@gmail.com	gmail.com  nRXƒ
+:auth_permission  00000000000000000032j&j
+s~usportifierrauth_permission r codename  *change_eventtypercontent_type_id  *r!name  *Can change event type‚auth_permission Š"
+sportfier@gmail.com	gmail.com  
+   H H¶í$[’É                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                6p:django_session  :fyu1qpmeyj0xb9cc0grrjvz0vnwliixo!6p:django_session  :kaacqr3tiwqia04zjfg4znhjg0biqkv8"6p:django_session  :nbhi1uf4dkvltxxcwghwnb495t3iudg7#6p:django_session  :ok5t25t2hdnbq7sb26y4vykxrv7nmbfc$6p:django_session  :qu0b97e3jox4uvbcv5y7miom7ei2196b%6p:django_session  :rnbwvre0g848dzm5arunixz4x6n2wbfh&6p:django_session  :skn83md4y89rb3yzoubobv9jf40ilzit'6p:django_session  :tuyb2fg2gm5kr3579xww9at8o5yb42ch5
+    Z 2F Z                                                                          iYXƒ
+:auth_permission  00000000000000000039j&j
+s~usportifierrauth_permission'rcodename  *delete_friendsrcontent_type_id  *
+rname  *Can delete friends‚auth_permission'Š"
+sportfier@gmail.com	gmail.com  iXXƒ
+:auth_permission  00000000000000000038j&j
+s~usportifierrauth_permission&rcodename  *change_friendsrcontent_type_id  *
+rname  *Can change friends‚auth_permission&Š"
+sportfier@gmail.com	gmail.com  cWX‚|
+:auth_permission  00000000000000000037j&j
+s~usportifierrauth_permission%rcodename  *
+add_friendsrcontent_type_id  *
+rname  *Can add friends‚auth_permission%Š"
+sportfier@gmail.com	gmail.com  eVXƒ 
+:auth_permission  00000000000000000036j&j
+s~usportifierrauth_permission$rcodename  *delete_eventrcontent_type_id  *rname  *Can delete event‚auth_permission$Š"
+sportfier@gmail.com	gmail.com  
+                  v]Xƒ"
+:auth_permission  00000000000000000043j&j
+s~usportifierrauth_permission+r$codename  *add_transactioneventrcontent_type_id  *r%name  *Can add transaction event‚auth_permission+Š"
+sportfier@gmail.com	gmail.com  x\Xƒ&
+:auth_permission  00000000000000000042j&j
+s~usportifierrauth_permission*r%codename  *delete_pendingfriendsrcontent_type_id  *r&name  *Can delete pending friends‚auth_permission*Š"
+sportfier@gmail.com	gmail.com  x[Xƒ&
+:auth_permission  00000000000000000041j&j
+s~usportifierrauth_permission)r%codename  *change_pendingfriendsrcontent_type_id  *r&name  *Can change pending friends‚auth_permission)Š"
+sportfier@gmail.com	gmail.com  rZXƒ
+:auth_permission  00000000000000000040j&j
+s~usportifierrauth_permission(r"codename  *add_pendingfriendsrcontent_type_id  *r#name  *Can add pending friends‚auth_permission(Š"
+sportfier@gmail.com	gmail.com  
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          |_Xƒ.
+:auth_permission  00000000000000000045j&j
+s~usportifierrauth_permission-r'codename  *delete_transactioneventrcontent_type_id  *r(name  *Can delete transaction event‚auth_permission-Š"
+sportfier@gmail.com	gmail.com  |^Xƒ.
+:auth_permission  00000000000000000044j&j
+s~usportifierrauth_permission,r'codename  *change_transactioneventrcontent_type_id  *r(name  *Can change transaction event‚auth_permission,Š"
+sportfier@gmail.com	gmail.com  

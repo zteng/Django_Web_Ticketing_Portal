@@ -1,0 +1,24 @@
+application: usportifier
+version: 1
+runtime: python27
+api_version: 1
+threadsafe: yes
+
+builtins:
+- remote_api: on
+
+inbound_services:
+- warmup
+
+handlers:
+- url: /_ah/queue/deferred
+  script: djangoappengine.deferred.handler.application
+  login: admin
+
+- url: /static
+  static_dir: static/
+  expiration: '365d'
+
+- url: /.*
+  script: djangoappengine.main.application
+  login: required

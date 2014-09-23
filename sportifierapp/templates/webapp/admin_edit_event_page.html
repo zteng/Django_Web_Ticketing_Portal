@@ -1,0 +1,339 @@
+{% extends	"webapp/register_login.html" %}
+
+{% block header %}
+<meta charset="utf-8">
+<title>Sportifiers</title>
+<script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false&libraries=places"></script>
+<script src="/static/themes/js/add_event.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="">
+<!--[if ie]><meta content='IE=8' http-equiv='X-UA-Compatible'/><![endif]-->
+<!-- bootstrap -->
+<link href="/static/bootstrap/css/bootstrap.min.css" rel="stylesheet">      
+<link href="/static/bootstrap/css/bootstrap-responsive.min.css" rel="stylesheet">		
+<link href="/static/themes/css/bootstrappage.css" rel="stylesheet"/>
+
+<!-- global styles -->
+<link href="/static/themes/css/flexslider.css" rel="stylesheet"/>
+<link href="/static/themes/css/main.css" rel="stylesheet"/>
+<link href="/static/themes/css/mytcss.css" rel="stylesheet"/>
+
+<script>
+  function countChar(val) {
+	var len = val.value.length;
+	if (len > 42) {
+	  val.value = val.value.substring(0, 42);
+	} else {
+	  $('#charNum').text((42 - len)+" characters remaining");
+	}
+  };
+</script>
+<!-- scripts -->
+<script src="/static/themes/js/jquery-1.7.2.min.js"></script>
+<script src="/static/bootstrap/js/bootstrap.min.js"></script>	
+<!--<script src="/static/themes/js/superfish.js"></script>-->	
+<!--<script src="/static/ajax/event_ajax.js"></script>-->
+<script src="/static/themes/js/jquery.scrolltotop.js"></script>
+<script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+<script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
+
+
+<!--[if lt IE 9]>			
+	<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+	<script src="js/respond.min.js"></script>
+<![endif]-->
+{% endblock %}
+
+{% block menu %}
+<section class="navbar main-menu">
+	<div class="navbar-inner main-menu">				
+		<a href="#" class="logo pull-left"><img src="/static/themes/images/logo.png" style="max-width: 45%;" class="site_logo" alt=""></a>
+		<nav id="menu" class="pull-right">
+			<ul>
+				<li class="active">
+					<a href="/">My events</a>					
+				</li>															
+						
+				<li>
+					<a href="/logout">Sign out</a>
+				</li>
+			</ul>
+		</nav>
+	</div>
+</section>
+
+<!-- header space -->
+<section class="header_text sub">
+</section>
+{% endblock %}		
+
+{% block main_content %}	
+<section class="main-content">
+	<div class="row">
+		<div class="span4 offset4">
+		{% if edit_form.errors %}
+		<p class="close" data-dismiss="alert" href="#">×</p>
+		<h4><strong>Invalid Edit Error: </strong></h4>
+		{% for error in edit_form.errors %}
+		<div class="alert alert-error">
+			<p class="close" data-dismiss="alert" href="#">×</p>{{ error }} is invalid
+		</div>
+		{% endfor %}
+		{% endif %}
+		</div>
+		<div class="span11" style="padding-left:45px">
+			<div class="accordion" id="accordion2">
+				<div class="accordion-group">
+					<div class="accordion-heading">
+						<a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="event{{event.id}}">
+							{{event.host}} <font color="green"> VS </font> {{event.away}}
+						</a>
+					</div>
+					<div id="event{{event.id}}" class="accordion-body in collapse">
+						<div class="accordion-inner">
+							<div class="row-fluid">
+							
+							<div class="span9 offset2" >
+									<div>
+									
+
+									<form action="{% url 'edit' id %}" method="post">
+									<div class="form-horizontal">
+										<fieldset>
+											<div id="legend">
+												<legend class="">
+													<font color="blue"><b>Add event details<b></font>
+												</legend>
+											</div>
+									 
+											<!-- Host Uni -->
+											<div class="control-group">
+												<label class="control-label">Host University <span style="color:red">*</span>: </label>
+												<div class="controls">
+													{{edit_form.host}}
+													<!--<input type="text" name="new_event" id="new-item" placeholder="Give your event distinct name" class="input-xlarge span6">-->
+												</div>
+											</div>
+											
+											<!--Away Uni-->
+											<div class="control-group">
+												<label class="control-label">Away University <span style="color:red">*</span>: </label>
+												<div class="controls">
+													{{edit_form.away}}
+													<!--<input type="datetime-local" name="date_time" class="input-xlarge span6">-->
+												</div>
+											</div>
+											
+											
+											<!--Event Date-->
+											<div class="control-group">
+												<label class="control-label">Event Date <span style="color:red">*</span>: </label>
+												<div class="controls">
+													{{edit_form.event_date}}
+													
+												</div>
+											</div>
+											
+											<!--Event Time-->
+											<div class="control-group">
+												<label class="control-label">Event Time <span style="color:red">*</span>: </label>
+												<div class="controls">
+													{{edit_form.event_time}}	
+												</div>
+											</div>
+											
+											<!-- Event Type -->
+											<div class="control-group">
+												<label class="control-label">Event Type <span style="color:red">*</span> : </label>
+												<div class="controls">
+													{{edit_form.type}}
+												
+												</div>
+											</div>
+											
+											<!-- Event Championship -->
+											<div class="control-group">
+												<label class="control-label">Championship <span style="color:red">*</span> : </label>
+												<div class="controls">
+													{{edit_form.championship}}
+												
+												</div>
+											</div>
+									 
+											
+											<!-- hidden field storing location latitude -->
+											{{edit_form.locationlattitude}}
+											
+											<!--<input type="hidden" name="latitude" id="lat" />-->
+											<!-- hidden field storing location longitude-->
+											{{edit_form.locationlongitude}}
+											<!--<input type="hidden" name="longitude" id="lon" />-->
+											
+											<!--Event Specific Location-->
+											<div class="control-group">
+												<label class="control-label">Event Location <span style="color:red">*</span>: </label>
+												<div class="controls">
+													{{edit_form.locationname}}	
+												</div>
+											</div>
+											
+											<!-- Event Location -->
+											<div class="control-group">
+												<label class="control-label">Location in the map<span style="color:red">*</span>: </label>
+												<div class="controls">
+												  <!--<input type="text" placeholder="Specify where your event will happen." class="input-xlarge span6">-->
+													<input id="pac-input" type="text" placeholder="Search Box">
+													<div id="map-canvas"></div>
+													<!-- <input class="pac-input" type="text" placeholder="Search Box">
+													<div class="map-canvas"></div> -->
+												</div>
+											</div>
+										  
+											<!-- Event Description -->
+											<div class="control-group">
+												<label class="control-label">Event Description : </label>
+												<div class="controls">
+													{{edit_form.description}}
+													<!--<textarea class="form-control span6 counted" name="event_desc" onkeyup="countChar(this)" placeholder="Type in your message" rows="5" style="margin-bottom:10px;"></textarea>-->
+													<h6 style="padding-left:160px;margin-top:-10px" id="charNum">42 characters remaining</h6>
+												</div>
+											</div>
+										
+										</fieldset>
+									</div>
+									</div>
+								</div>
+								
+								<div class="span9 offset2" >
+									<div>
+									<div class="form-horizontal">
+										<fieldset>
+											<div id="legend">
+												<legend class="">
+													<font color="blue"><b>Tickets info</b></font>
+												</legend>
+											</div>
+											
+											<!-- Ticket Quantities -->
+											<div class="control-group">
+												<label class="control-label" >Total number of tickets : <span style="color:red">*</span></label>
+												<div class="controls">
+													{{edit_form.maxnumberoftickets}}
+													<!--<input type="text" name="ticket_quan" placeholder="create number of tickets here" class="input-xlarge span6">-->
+												</div>
+											</div>
+
+
+
+											<!-- tickets details -->
+											<div class="control-group">
+											<label class="control-label" >Tickets: </label>
+												<div class="controls">
+													<table class="table table-condensed span6" style="margin-left:-6px;">
+														<thead>
+															<tr>
+																<th>Group</th>
+																<th>Prices</th>
+																
+															</tr>
+														</thead>   
+														<tbody>
+															<tr>
+																<td>Home Student<span style="color:red">*</span></td>
+																<td>
+																	{{edit_form.homestudentticketprice}}
+																	<!--<input name="home_stu" type="text" placeholder="" class="input-medium">-->
+																</td>
+																
+															</tr>
+															<tr>
+																<td>home staff<span style="color:red">*</span></td>
+																<td>
+																	{{edit_form.homestaffticketprice}}
+																	<!--<input name="home_staff" type="text" placeholder="" class="input-medium">-->
+																</td>
+																
+															</tr>
+															<tr>
+																<td>home supporter<span style="color:red">*</span></td>
+																<td>
+																	{{edit_form.homesupporterticketprice}}
+																	<!--<input name="home_sup" type="text" placeholder="" class="input-medium">-->
+																</td>
+																
+															</tr>
+															<tr>
+																<td>away student<span style="color:red">*</span></td>
+																<td>
+																	{{edit_form.awaystudentticketprice}}
+																	<!--<input name="away_stu" type="text" placeholder="" class="input-medium">-->
+																</td>
+																
+															</tr>
+															<tr>
+																<td>away staff<span style="color:red">*</span></td>
+																<td>
+																	{{edit_form.awaystaffticketprice}}
+																	<!--<input name="away_staff" type="text" placeholder="" class="input-medium">-->
+																</td>
+																
+															</tr>
+															<tr>
+																<td>away supporter<span style="color:red">*</span></td>
+																<td>
+																	{{edit_form.awaysupporterticketprice}}
+																	<!--<input name="away_sup" type="text" placeholder="" class="input-medium">-->
+																</td>
+																
+															</tr>
+														</tbody>
+													</table>
+												</div>
+											</div>
+											
+											<!-- Ticket Available venue -->
+											<div class="control-group">
+												<label class="control-label" >Available At Venue : <span style="color:red">*</span></label>
+												<div class="controls">
+													{{edit_form.areticketsavailableatvenue}}
+													<!--<input type="text" name="ticket_quan" placeholder="create number of tickets here" class="input-xlarge span6">-->
+												</div>
+											</div>
+											
+										</fieldset>
+									</div>
+									</div>
+									
+									<!-- submit button to post an event -->
+									<button type="submit" class="btn btn-info" style="float:right">Save changes</button>
+									{% csrf_token %}
+									</form>
+								</div>
+								
+							</div>
+						</div>
+					</div>
+				</div>
+		
+			</div>				
+		</div>
+	</div>
+</section>		
+{% endblock %}	
+
+{% block footer %}			
+<section id="footer-bar">
+	<div class="row">
+		<div class="span5 offset4">
+			<p class="logo"><img src="/static/themes/images/logo.png" class="site_logo" alt=""></p>
+			<p>Welcome to Sportifiers! Here you could either post a university sports event or find your interested one.</p>
+			<p>Hanging out with your best friends is always the lowest price! </p>
+			<br/>
+		</div>
+	</div>
+	
+</section>
+<section id="copyright">
+	<span>Copyright 2013 Sportifiers  All right reserved.</span>
+</section>
+{% endblock %}

@@ -1,0 +1,18 @@
+<all_events>
+	<event_info>
+		<events_num>{{numberOfEvents}}</events_num>
+	</event_info>
+	<events>
+		{% for item in events %}
+		<event>
+			<event_date>{{item.event_parse_date}}</event_date>
+			<event_time>{{item.event_parse_time}}</event_time>
+			<event_host>{{item.host}}</event_host>
+			<event_away>{{item.away}}</event_away>
+			<event_type>{{item.type}}</event_type>
+			<event_cham>{{item.championship}}</event_cham>
+			<event_id>{{item.id}}</event_id>
+		</event>
+		{% endfor %}
+	</events>
+</all_events>

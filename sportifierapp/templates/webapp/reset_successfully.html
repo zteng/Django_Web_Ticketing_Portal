@@ -1,0 +1,10 @@
+{% extends "webapp/confirmed.html" %}
+
+{% block title %}
+Password successfully changed 
+{% endblock %}
+
+{% block paragraph %}
+Your password have been successfully changed. Please click the <a href="{% url 'home' %}">here</a> to go back to your landing page or
+<a href="{% url 'logout' %}">logout</a>.
+{% endblock %}
